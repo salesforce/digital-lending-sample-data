@@ -48,13 +48,93 @@ insert sample_product_auto_loan;
 System.debug(sample_product_auto_loan);
 System.debug('Created 1 product');
 
+System.debug('Assigning sample_product_auto_loan to sample_category...');
+
 ProductCategoryProduct sample_productCategoryProduct =
     new ProductCategoryProduct(
                             ProductCategoryId = sample_category.ID, ProductId = sample_product_auto_loan.ID);
 
 insert sample_productCategoryProduct;
 System.debug(sample_productCategoryProduct);
-System.debug('Assign sample_product_auto_loan to sample_category');
+System.debug('Assigned sample_product_auto_loan to sample_category');
+
+System.debug('Creating attribute definitions...');
+
+AttributeDefinition maxLoanAmount =
+    new AttributeDefinition(Name = 'MaxLoanAmount', DataType='Number', DefaultValue='1000000', Description='MaxLoanAmount', Label= 'MaxLoanAmount', isActive=True);
+
+insert maxLoanAmount;
+
+System.debug(maxLoanAmount);
+
+AttributeDefinition minLoanAmount =
+    new AttributeDefinition(Name = 'MinLoanAmount', DataType='Number', DefaultValue='1000', Description='MinLoanAmount', Label= 'MinLoanAmount', isActive=True);
+
+insert minLoanAmount;
+
+System.debug(minLoanAmount);
+
+AttributeDefinition omniscriptName =
+    new AttributeDefinition(Name = 'OmniscriptName', DataType='Text', DefaultValue='ApplicantIntakeSecured', Description='OmniscriptName', Label= 'OmniscriptName', isActive=True);
+
+insert omniscriptName;
+
+System.debug(omniscriptName);
+
+
+AttributePicklist attributePicklistLoanTerm =
+    new AttributePicklist(Name = 'LoanTerm', Description='LoanTerm',  DataType='Text', Status = 'Active');
+
+insert attributePicklistLoanTerm;
+
+System.debug(attributePicklistLoanTerm);
+
+
+AttributePicklistValue loanTerm_12Months =
+    new AttributePicklistValue(Name = '12 Months', DisplayValue= '12', isDefault=True, Status= 'Active', Sequence = 1);
+
+insert loanTerm_12Months;
+
+System.debug(loanTerm_12Months);
+
+AttributePicklistValue loanTerm_24Months =
+    new AttributePicklistValue(Name = '24 Months', DisplayValue= '24', Status= 'Active', Sequence = 2);
+
+insert loanTerm_24Months;
+
+System.debug(loanTerm_24Months);
+
+AttributePicklistValue loanTerm_36Months =
+    new AttributePicklistValue(Name = '36 Months', DisplayValue= '36', Status= 'Active', Sequence = 3);
+
+insert loanTerm_36Months;
+
+System.debug(loanTerm_36Months);
+
+
+
+
+AttributeDefinition loanTerm =
+    new AttributeDefinition(Name = 'LoanTerm', DataType='Picklist', Description='LoanTerm', Label= 'LoanTerm', isActive=True, PicklistId= attributePicklistLoanTerm.ID);
+
+insert loanTerm;
+
+System.debug(loanTerm);
+
+
+AttributeDefinition offerValidPeriod =
+    new AttributeDefinition(Name = 'OfferValidPeriod', DataType = 'Number', Label= 'OfferValidPeriod', Description='OfferValidPeriod', isActive=True, DefaultValue='30');
+
+insert offerValidPeriod;
+System.debug(offerValidPeriod);
+
+
+
+
+
+
+
+
 
 
 
