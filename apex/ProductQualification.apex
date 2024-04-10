@@ -29,6 +29,8 @@ System.debug('Creating product qualification ...');
 String autoLoanProductId = '01txx0000006iFMAAY';
 String presonalLoanProductId = '01txx0000006iGyAAI';
 
+// Merged with Products
+
 ProductQualification autoLoanQualification = 
     new ProductQualification(ProductId = autoLoanProductId,
                              EffectiveFromDate = Date.newInstance(2023, 1, 1),

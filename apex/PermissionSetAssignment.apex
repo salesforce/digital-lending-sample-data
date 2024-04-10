@@ -22,13 +22,32 @@
  * From project root dir: sf apex run --file apex/PermissionSetAssignment.apex -o YourOrgAlias
  */ 
 
+// SAMPLE
+
+PermissionSet dlps = [SELECT Fields(Standard) FROM PermissionSet WHERE Name = 'DigitalLending'].clone();
+dlps.Id = null;
+dlps.Name = 'SampleDigitalLendingClone';
+dlps.Label = 'Sample Financial Services Cloud Digital Lending Clone';
+dlps.PermissionsDigitalLendingAdminUser = true;
+// dlps.PermissionsDigitalLendingWorkbench = true;
+insert dlps;
+
+PermissionSet cdsps = [SELECT Fields(Standard) FROM PermissionSet WHERE Name = 'CompliantDataSharing'].clone();
+cdsps.Id = null;
+cdsps.Name = 'SampleCompliantDataSharingClone';
+cdsps.Label = 'Sample Financial Services Cloud Compliant Data Sharing Clone';
+cdsps.PermissionsConfigCompliantDataSharing = true;
+cdsps.PermissionsUseCompliantDataSharing = true;
+insert cdsps;
 
 String userId = UserInfo.getUserId();
 List<String> permissionSetNames = new List<String> {'BREDesigner',
                                                     'ProductCatalogManagementAdministrator',
                                                     'ProductCatalogManagementViewer',
                                                     'ProductDiscoveryAdmin', 
-                                                    'ProductDiscoveryUser'};
+                                                    'ProductDiscoveryUser',
+                                                    'SampleCompliantDataSharingClone',
+                                                    'SampleDigitalLendingClone'};
 
 List<PermissionSetAssignment> assignedPermissions = [SELECT PermissionSet.Name 
                                                      FROM PermissionSetAssignment 
