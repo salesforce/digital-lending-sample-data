@@ -32,9 +32,15 @@ insert sample_category;
 
 System.debug(sample_category);
 
+ProductClassification productClassification =
+    new ProductClassification(Code = 'sample_product_classification', Name='sample_product_classification', status='Active');
+
+insert productClassification;
+System.debug(productClassification);
+
 Product2 sample_product_auto_loan =
     new Product2(Name= 'sample_product_auto_loan',
-                            Description = 'sample_product_auto_loan', IsActive=True);
+                            Description = 'sample_product_auto_loan', IsActive=True, BasedOnId = productClassification.ID);
 
 insert sample_product_auto_loan;
 
@@ -111,6 +117,37 @@ AttributeDefinition offerValidPeriod =
 
 insert offerValidPeriod;
 System.debug(offerValidPeriod);
+
+ProductClassificationAttr productClassificationAttr =
+    new ProductClassificationAttr(Name = 'MaxLoanAmount', AttributeDefinitionId = maxLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+
+insert productClassificationAttr;
+System.debug(productClassificationAttr);
+
+productClassificationAttr =
+    new ProductClassificationAttr(Name = 'MinLoanAmount', AttributeDefinitionId = minLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+
+insert productClassificationAttr;
+System.debug(productClassificationAttr);
+
+productClassificationAttr =
+    new ProductClassificationAttr(Name = 'OmniscriptName', AttributeDefinitionId = omniscriptName.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+
+insert productClassificationAttr;
+System.debug(productClassificationAttr);
+
+productClassificationAttr =
+    new ProductClassificationAttr(Name = 'LoanTerm', AttributeDefinitionId = loanTerm.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+
+insert productClassificationAttr;
+System.debug(productClassificationAttr);
+
+productClassificationAttr =
+    new ProductClassificationAttr(Name = 'OfferValidPeriod', AttributeDefinitionId = offerValidPeriod.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+
+insert productClassificationAttr;
+System.debug(productClassificationAttr);
+
 
 
 
