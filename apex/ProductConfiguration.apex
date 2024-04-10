@@ -91,21 +91,21 @@ System.debug(attributePicklistLoanTerm);
 
 
 AttributePicklistValue loanTerm_12Months =
-    new AttributePicklistValue(Name = '12 Months', DisplayValue= '12', isDefault=True, Status= 'Active', Sequence = 1);
+    new AttributePicklistValue(Name = '12 Months',Code = '12 Months',  Value= '12', isDefault=True, Status= 'Active', Sequence = 1, PicklistId= attributePicklistLoanTerm.ID);
 
 insert loanTerm_12Months;
 
 System.debug(loanTerm_12Months);
 
 AttributePicklistValue loanTerm_24Months =
-    new AttributePicklistValue(Name = '24 Months', DisplayValue= '24', Status= 'Active', Sequence = 2);
+    new AttributePicklistValue(Name = '24 Months',Code = '24 Months', Value= '24', Status= 'Active', Sequence = 2, PicklistId= attributePicklistLoanTerm.ID);
 
 insert loanTerm_24Months;
 
 System.debug(loanTerm_24Months);
 
 AttributePicklistValue loanTerm_36Months =
-    new AttributePicklistValue(Name = '36 Months', DisplayValue= '36', Status= 'Active', Sequence = 3);
+    new AttributePicklistValue(Name = '36 Months',Code = '36 Months', Value= '36', Status= 'Active', Sequence = 3, PicklistId= attributePicklistLoanTerm.ID);
 
 insert loanTerm_36Months;
 
