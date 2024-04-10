@@ -1,8 +1,8 @@
 delete [SELECT Id FROM ProductClassificationAttr];
 
-delete [SELECT Id FROM ProductClassification];
-
 delete [SELECT Id FROM Product2];
+
+delete [SELECT Id FROM ProductClassification];
 
 delete [SELECT Id FROM AttributeDefinition];
 

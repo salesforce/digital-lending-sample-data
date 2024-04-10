@@ -17,30 +17,32 @@
 
 // Create Products etc.
 
+String SAMPLE_PREFIX = 'sample_';
+
 ProductCatalog sample_catalog = 
-    new ProductCatalog(Name = 'sample_catalog',
-                             Description = 'sample_catalog');
+    new ProductCatalog(Name = SAMPLE_PREFIX+'catalog',
+                             Description = SAMPLE_PREFIX+'catalog');
 insert sample_catalog;
 
 System.debug(sample_catalog);
 
 ProductCategory sample_category =
-    new ProductCategory(Name= 'sample_category',
-                            Description = 'sample_category', CatalogId = sample_catalog.ID);
+    new ProductCategory(Name= SAMPLE_PREFIX+'category',
+                            Description = SAMPLE_PREFIX+'category', CatalogId = sample_catalog.ID);
 
 insert sample_category;
 
 System.debug(sample_category);
 
 ProductClassification productClassification =
-    new ProductClassification(Code = 'sample_product_classification', Name='sample_product_classification', status='Active');
+    new ProductClassification(Code = SAMPLE_PREFIX+'product_classification', Name=SAMPLE_PREFIX+'product_classification', status='Active');
 
 insert productClassification;
 System.debug(productClassification);
 
 Product2 sample_product_auto_loan =
-    new Product2(Name= 'sample_product_auto_loan',
-                            Description = 'sample_product_auto_loan', IsActive=True, BasedOnId = productClassification.ID);
+    new Product2(Name= SAMPLE_PREFIX+'product_auto_loan',
+                            Description = SAMPLE_PREFIX+'product_auto_loan', IsActive=True, BasedOnId = productClassification.ID);
 
 insert sample_product_auto_loan;
 
