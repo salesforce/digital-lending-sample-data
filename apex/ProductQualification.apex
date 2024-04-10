@@ -26,8 +26,8 @@
 
 System.debug('Creating product qualification ...');
 
-String autoLoanProductId = '01txx0000006iFMAAY';
-String presonalLoanProductId = '01txx0000006iGyAAI';
+String autoLoanProductId = 'REPLACME';
+String presonalLoanProductId = 'REPLACME';
 
 // Merged with Products
 

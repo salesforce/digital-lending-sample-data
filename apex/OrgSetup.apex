@@ -19,29 +19,41 @@
  * This apex code will assign permission sets to the user.
  * Usage:
  * Execute this script before any other scripts
- * From project root dir: sf apex run --file apex/PermissionSetAssignment.apex -o YourOrgAlias
+ * From project root dir: sf apex run --file apex/OrgSetup.apex -o YourOrgAlias
  */ 
 
-// SAMPLE
+String PREFIX = 'Sample';
 
 PermissionSet dlps = [SELECT Fields(Standard) FROM PermissionSet WHERE Name = 'DigitalLending'].clone();
 dlps.Id = null;
-dlps.Name = 'SampleDigitalLendingClone';
-dlps.Label = 'Sample Financial Services Cloud Digital Lending Clone';
+dlps.Name = PREFIX + 'DigitalLendingClone';
+dlps.Label = PREFIX + ' Financial Services Cloud Digital Lending Clone';
 dlps.PermissionsDigitalLendingAdminUser = true;
-// dlps.PermissionsDigitalLendingWorkbench = true;
 insert dlps;
 
 PermissionSet cdsps = [SELECT Fields(Standard) FROM PermissionSet WHERE Name = 'CompliantDataSharing'].clone();
 cdsps.Id = null;
-cdsps.Name = 'SampleCompliantDataSharingClone';
-cdsps.Label = 'Sample Financial Services Cloud Compliant Data Sharing Clone';
+cdsps.Name = PREFIX + 'CompliantDataSharingClone';
+cdsps.Label = PREFIX + ' Financial Services Cloud Compliant Data Sharing Clone';
 cdsps.PermissionsConfigCompliantDataSharing = true;
 cdsps.PermissionsUseCompliantDataSharing = true;
 insert cdsps;
 
 String userId = UserInfo.getUserId();
-List<String> permissionSetNames = new List<String> {'BREDesigner',
+List<String> permissionSetNames = new List<String> {'BREAdvancedDesignerPsl',
+                                                    'BREDesigner',
+                                                    'BRERuntime',
+                                                    'CLMAdminUser',
+                                                    'CLMRuntimeUser',
+                                                    'CorePricingAdmin',
+                                                    'CorePricingDesignTimeUser',
+                                                    'CorePricingManager',
+                                                    'CorePricingRunTimeUser',
+                                                    'DocGenDesigner',
+                                                    'DocGenUser',
+                                                    'OmniStudioAdmin',
+                                                    'OmniStudioExecution',
+                                                    'OmniStudioUser',
                                                     'ProductCatalogManagementAdministrator',
                                                     'ProductCatalogManagementViewer',
                                                     'ProductDiscoveryAdmin', 
@@ -78,3 +90,4 @@ for (String permissionName: permissionSetNames) {
 insert newPermissionSetAssignments;
 
 System.debug('Added ' + newPermissionSetAssignments.size() + ' permission sets to the user');
+

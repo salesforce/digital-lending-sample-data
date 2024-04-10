@@ -9,17 +9,9 @@
         <name>DecisionTable</name>
     </types>
     <types>
-        <members>AAEProductQualification</members>
-        <members>SSEProductQualification</members>
-        <name>ExpressionSetDefinition</name>
-    </types>
-    <types>
         <members>Admin</members>
+        <members>Sample Customer Community Plus Login User Clone</members>
         <name>Profile</name>
-    </types>
-    <types>
-        <members>IndustriesContext</members>
-        <name>Settings</name>
     </types>
     <version>61.0</version>
 </Package>
