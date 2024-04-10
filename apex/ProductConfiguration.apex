@@ -16,7 +16,6 @@
  */
 
 // Create Products etc.
-System.debug('Creating catalog...');
 
 ProductCatalog sample_catalog = 
     new ProductCatalog(Name = 'sample_catalog',
@@ -24,9 +23,6 @@ ProductCatalog sample_catalog =
 insert sample_catalog;
 
 System.debug(sample_catalog);
-System.debug('Created 1 product catalog');
-
-System.debug('Creating category...');
 
 ProductCategory sample_category =
     new ProductCategory(Name= 'sample_category',
@@ -35,9 +31,6 @@ ProductCategory sample_category =
 insert sample_category;
 
 System.debug(sample_category);
-System.debug('Created 1 product category');
-
-System.debug('Creating product...');
 
 Product2 sample_product_auto_loan =
     new Product2(Name= 'sample_product_auto_loan',
@@ -46,9 +39,6 @@ Product2 sample_product_auto_loan =
 insert sample_product_auto_loan;
 
 System.debug(sample_product_auto_loan);
-System.debug('Created 1 product');
-
-System.debug('Assigning sample_product_auto_loan to sample_category...');
 
 ProductCategoryProduct sample_productCategoryProduct =
     new ProductCategoryProduct(
@@ -56,9 +46,6 @@ ProductCategoryProduct sample_productCategoryProduct =
 
 insert sample_productCategoryProduct;
 System.debug(sample_productCategoryProduct);
-System.debug('Assigned sample_product_auto_loan to sample_category');
-
-System.debug('Creating attribute definitions...');
 
 AttributeDefinition maxLoanAmount =
     new AttributeDefinition(Name = 'MaxLoanAmount', DataType='Number', DefaultValue='1000000', Description='MaxLoanAmount', Label= 'MaxLoanAmount', isActive=True);
@@ -110,9 +97,6 @@ AttributePicklistValue loanTerm_36Months =
 insert loanTerm_36Months;
 
 System.debug(loanTerm_36Months);
-
-
-
 
 AttributeDefinition loanTerm =
     new AttributeDefinition(Name = 'LoanTerm', DataType='Picklist', Description='LoanTerm', Label= 'LoanTerm', isActive=True, PicklistId= attributePicklistLoanTerm.ID);
