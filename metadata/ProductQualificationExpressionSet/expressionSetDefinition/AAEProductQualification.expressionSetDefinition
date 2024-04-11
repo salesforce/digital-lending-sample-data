@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExpressionSetDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contextDefinitions>LendingProductDiscoveryContext__stdctx</contextDefinitions>
+    <executionScale>Low</executionScale>
+    <label>AAEProductQualification</label>
+    <processType>ProductQualification</processType>
+    <template>false</template>
+    <versions>
+        <fullName>AAEProductQualification_V1</fullName>
+        <expressionSetDefinition>AAEProductQualification</expressionSetDefinition>
+        <label>AAEProductQualification V1</label>
+        <processType>ProductQualification</processType>
+        <shouldShowExplExternally>false</shouldShowExplExternally>
+        <startDate>2024-04-06T02:29:15.000Z</startDate>
+        <status>Active</status>
+        <steps>
+            <actionType>EvaluateQualification</actionType>
+            <customElement>
+                <parameters>
+                    <input>true</input>
+                    <name>ProductId</name>
+                    <output>false</output>
+                    <type>Parameter</type>
+                    <value>ProductId</value>
+                </parameters>
+                <parameters>
+                    <input>true</input>
+                    <name>City</name>
+                    <output>false</output>
+                    <type>Parameter</type>
+                    <value>City</value>
+                </parameters>
+                <parameters>
+                    <input>true</input>
+                    <name>DTName</name>
+                    <output>false</output>
+                    <type>Literal</type>
+                    <value>ProductQualificationDT</value>
+                </parameters>
+                <parameters>
+                    <input>false</input>
+                    <name>IsQualified</name>
+                    <output>true</output>
+                    <type>Parameter</type>
+                    <value>IsQualified</value>
+                </parameters>
+                <parameters>
+                    <input>false</input>
+                    <name>Reason</name>
+                    <output>true</output>
+                    <type>Parameter</type>
+                    <value>Reason</value>
+                </parameters>
+            </customElement>
+            <description>Evaluate Qualification</description>
+            <label>Evaluate Qualification</label>
+            <name>EvaluateQualification</name>
+            <resultIncluded>true</resultIncluded>
+            <sequenceNumber>1</sequenceNumber>
+            <shouldExposExecPathMsgOnly>true</shouldExposExecPathMsgOnly>
+            <shouldExposeConditionDetails>false</shouldExposeConditionDetails>
+            <shouldShowExplExternally>false</shouldShowExplExternally>
+            <stepType>BusinessKnowledgeModel</stepType>
+        </steps>
+        <versionNumber>1</versionNumber>
+    </versions>
+</ExpressionSetDefinition>

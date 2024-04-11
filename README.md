@@ -1,18 +1,70 @@
-# Salesforce DX Project: Next Steps
+# README
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This repository contains sample data for Industries Digital Lending.
 
-## How Do You Plan to Deploy Your Changes?
+Digital Lending feature setup has several steps. This repo automates many of these setup steps and will also setup sample data (i.e. products etc.)
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Usage
 
-## Configure Your Salesforce DX Project
+### Prerequisites and Guidelines
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+1. Run all the following steps on a fresh org (i.e. any newly created org without additional data).
+2. The setup is divided into several sections. Digital Lending relies on several Salesforce features and each section will complete setup for a subset of the features.
+3. The setup will create data, for e.g. Product. Running the same command again might lead to duplicate data.
+4. The org should have all the appropriate licenses so that Digital Lending feature is available on your org. The setup will help you assign appropriate permission sets etc.
+5. The setup assumes that the user has latest `sf` (Salesforce-CLI) installed. It also assumes general familiarity with Salesforce.
+6. Ensure that Apex Debug Level is set to `DEBUG` or more verbose. This is required since some of the commands below will debug-print from Apex code. You will need to note certain data from these logs to be used in later steps.
 
-## Read All About It
+Connect to your org using `sf org login web -a YourOrgAlias -r YOURURL` command.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+### Org Setup
+
+1. `sf apex run --file apex/OrgSetup.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates two custom permission sets: SampleDigitalLendingClone and SampleCompliantDataSharingClone. 
+
+Assigns these and several other permission sets to the user.
+</details>
+
+2. `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates a custom profile: Sample Customer Community Plus Login User Clone.
+
+Enables Context Definition in the org.
+</details>
+
+3. Navigate to `Product Discovery Settings` from Setup, and enable `Qualification Procedure`.
+
+### Product Configuration
+
+TODO
+
+### Product Qualification
+
+1. Replace `REPLACME`s in `apex/ProductQualification.apex` with Auto Loan and Personal Loan productId obtained from [Product Configuration](#product-configuration) section.
+
+2. `sf project deploy start --metadata-dir metadata/ProductQualificationSetup -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates a custom field City on ProductQualification object. 
+
+Assign fieldpermissions to Admin and Sample Customer Community Plus Login User Clone profiles for the new field.
+
+Create a Decision Table for Product Qualification.
+</details>
+
+3. `sf apex run --file apex/ProductQualification.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates two product qualification records, one for auto loan, and another for personal loan.
+</details>
+
+4. `sf project deploy start --metadata-dir metadata/ProductQualificationExpressionSet -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Create two expression sets for Product Qualification.
+</details>
+
+In the above steps, a new custom field `City__c` has been created on `ProductQualification` object. We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want this field to be visible from Setup.
