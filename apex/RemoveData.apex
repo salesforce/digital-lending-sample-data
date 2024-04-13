@@ -16,4 +16,10 @@ delete [SELECT Id FROM ProductCategory];
 
 delete [SELECT Id FROM ProductCatalog];
 
+delete [SELECT Id FROM AuthorizationFormDataUse];
 
+delete [SELECT Id FROM AuthorizationFormText];
+
+delete [SELECT Id FROM AuthorizationForm];
+
+delete [SELECT Id FROM DataUsePurpose];

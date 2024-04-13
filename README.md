@@ -22,9 +22,9 @@ Connect to your org using `sf org login web -a YourOrgAlias -r YOURURL` command.
 1. `sf apex run --file apex/OrgSetup.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-Creates two custom permission sets: SampleDigitalLendingClone and SampleCompliantDataSharingClone. 
+Creates a custom permission set SampleDigitalLendingClone. 
 
-Assigns these and several other permission sets to the user.
+Assigns this and several other permission sets to the user.
 </details>
 
 2. `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
@@ -32,39 +32,36 @@ Assigns these and several other permission sets to the user.
 <summary>Command Details</summary>
 Creates a custom profile: Sample Customer Community Plus Login User Clone.
 
+Creates a custom field City on ProductQualification object. 
+
+Assign fieldpermissions to Admin and Sample Customer Community Plus Login User Clone profiles for the new field.
+
 Enables Context Definition in the org.
 </details>
 
 3. Navigate to `Product Discovery Settings` from Setup, and enable `Qualification Procedure`.
 
+In the above steps, a new custom field `City__c` has been created on `ProductQualification` object. We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want this field to be visible from Setup.
+
 ### Product Configuration
 
-TODO
+1. `sf apex run --file apex/ProductConfiguration.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+[??] Creates two product qualification records, one for auto loan, and another for personal loan.
+</details>
 
 ### Product Qualification
 
-1. Replace `REPLACME`s in `apex/ProductQualification.apex` with Auto Loan and Personal Loan productId obtained from [Product Configuration](#product-configuration) section.
-
-2. `sf project deploy start --metadata-dir metadata/ProductQualificationSetup -o YourOrgAlias`
+1. `sf project deploy start --metadata-dir metadata/ProductQualificationSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-Creates a custom field City on ProductQualification object. 
-
-Assign fieldpermissions to Admin and Sample Customer Community Plus Login User Clone profiles for the new field.
 
 Create a Decision Table for Product Qualification.
 </details>
 
-3. `sf apex run --file apex/ProductQualification.apex -o YourOrgAlias`
-<details>
-<summary>Command Details</summary>
-Creates two product qualification records, one for auto loan, and another for personal loan.
-</details>
-
-4. `sf project deploy start --metadata-dir metadata/ProductQualificationExpressionSet -o YourOrgAlias`
+2. `sf project deploy start --metadata-dir metadata/ProductQualificationExpressionSet -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Create two expression sets for Product Qualification.
 </details>
-
-In the above steps, a new custom field `City__c` has been created on `ProductQualification` object. We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want this field to be visible from Setup.

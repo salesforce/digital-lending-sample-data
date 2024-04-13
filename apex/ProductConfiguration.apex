@@ -15,8 +15,6 @@
  * limitations under the License.
  */
 
-// Create Products etc.
-
 String SAMPLE_PREFIX = 'sample_';
 
 ProductCatalog sample_catalog = 
@@ -76,7 +74,7 @@ insert omniscriptName;
 
 System.debug(omniscriptName);
 
-
+// TODO: Code req field is missing
 AttributePicklist attributePicklistLoanTerm =
     new AttributePicklist(Name = 'LoanTerm', Description='LoanTerm',  DataType='Text', Status = 'Active');
 
@@ -150,7 +148,28 @@ productClassificationAttr =
 insert productClassificationAttr;
 System.debug(productClassificationAttr);
 
+System.debug('Creating product qualification ...');
 
+String autoLoanProductId = sample_product_auto_loan.Id;
+// String presonalLoanProductId = 'REPLACME';
+
+ProductQualification autoLoanQualification = 
+    new ProductQualification(ProductId = autoLoanProductId,
+                             EffectiveFromDate = Date.newInstance(2023, 1, 1),
+                             EffectiveToDate = Date.newInstance(2030, 12, 31),
+                             City__c = 'Frisco');
+insert autoLoanQualification;
+
+// ProductQualification personalLoanQualification = 
+//     new ProductQualification(ProductId = presonalLoanProductId,
+//                              EffectiveFromDate = Date.newInstance(2023, 1, 1),
+//                              EffectiveToDate = Date.newInstance(2030, 12, 31),
+//                              City__c = 'Pleasanton');
+// insert personalLoanQualification;
+
+System.debug(autoLoanQualification.id);
+// System.debug(personalLoanQualification.id);
+// System.debug('Created 2 product qualifications');
 
 
 

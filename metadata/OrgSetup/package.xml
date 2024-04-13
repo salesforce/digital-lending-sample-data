@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>ProductQualification.City__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Admin</members>
         <members>Sample Customer Community Plus Login User Clone</members>
         <name>Profile</name>
     </types>

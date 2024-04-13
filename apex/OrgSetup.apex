@@ -29,15 +29,8 @@ dlps.Id = null;
 dlps.Name = PREFIX + 'DigitalLendingClone';
 dlps.Label = PREFIX + ' Financial Services Cloud Digital Lending Clone';
 dlps.PermissionsDigitalLendingAdminUser = true;
+dlps.PermissionsConfigCompliantDataSharing = true;
 insert dlps;
-
-PermissionSet cdsps = [SELECT Fields(Standard) FROM PermissionSet WHERE Name = 'CompliantDataSharing'].clone();
-cdsps.Id = null;
-cdsps.Name = PREFIX + 'CompliantDataSharingClone';
-cdsps.Label = PREFIX + ' Financial Services Cloud Compliant Data Sharing Clone';
-cdsps.PermissionsConfigCompliantDataSharing = true;
-cdsps.PermissionsUseCompliantDataSharing = true;
-insert cdsps;
 
 String userId = UserInfo.getUserId();
 List<String> permissionSetNames = new List<String> {'BREAdvancedDesignerPsl',
@@ -58,7 +51,6 @@ List<String> permissionSetNames = new List<String> {'BREAdvancedDesignerPsl',
                                                     'ProductCatalogManagementViewer',
                                                     'ProductDiscoveryAdmin', 
                                                     'ProductDiscoveryUser',
-                                                    'SampleCompliantDataSharingClone',
                                                     'SampleDigitalLendingClone'};
 
 List<PermissionSetAssignment> assignedPermissions = [SELECT PermissionSet.Name 
