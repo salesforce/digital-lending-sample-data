@@ -34,7 +34,7 @@ Creates a custom profile: Sample Customer Community Plus Login User Clone.
 
 Creates a custom field City on ProductQualification object. 
 
-Assign fieldpermissions to Admin and Sample Customer Community Plus Login User Clone profiles for the new field.
+Assigns fieldpermissions to Admin and Sample Customer Community Plus Login User Clone profiles for the new field.
 
 Enables Context Definition in the org.
 </details>
@@ -56,12 +56,43 @@ In the above steps, a new custom field `City__c` has been created on `ProductQua
 1. `sf project deploy start --metadata-dir metadata/ProductQualificationSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-
-Create a Decision Table for Product Qualification.
+Creates a Decision Table for Product Qualification.
 </details>
 
 2. `sf project deploy start --metadata-dir metadata/ProductQualificationExpressionSet -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-Create two expression sets for Product Qualification.
+Creates two expression sets for Product Qualification.
+</details>
+
+### Disclosure And Consent
+
+1. `sf project deploy start --metadata-dir metadata/DisclosureAndConsent -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates a Decision Matrix for Disclosure And Consent.
+</details>
+
+2. `sf apex run --file apex/DisclosureAndConsent.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates Application Form, Application Form Text, Data Use Purpose, and ApplicationFormDataUse record.
+
+Adds rows to the Decision Matrix for Disclosure And Consent.
+</details>
+
+### Document
+
+1. `sf project deploy start --metadata-dir metadata/Document -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates a Decision Matrix for Document Upload.
+
+Creates two Document Types.
+</details>
+
+2. `sf apex run --file apex/Document.apex -o YourOrgAlias`
+<details>s
+<summary>Command Details</summary>
+Adds rows to the Decision Matrix for Document Upload.
 </details>
