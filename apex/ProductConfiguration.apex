@@ -74,7 +74,6 @@ insert omniscriptName;
 
 System.debug(omniscriptName);
 
-// TODO: Code req field is missing
 AttributePicklist attributePicklistLoanTerm =
     new AttributePicklist(Name = 'LoanTerm', Description='LoanTerm',  DataType='Text', Status = 'Active');
 
