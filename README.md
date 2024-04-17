@@ -81,9 +81,9 @@ Creates Application Form, Application Form Text, Data Use Purpose, and Applicati
 Adds rows to the Decision Matrix for Disclosure And Consent.
 </details>
 
-### Document
+### Document Upload
 
-1. `sf project deploy start --metadata-dir metadata/Document -o YourOrgAlias`
+1. `sf project deploy start --metadata-dir metadata/DocumentUpload -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a Decision Matrix for Document Upload.
@@ -91,8 +91,24 @@ Creates a Decision Matrix for Document Upload.
 Creates two Document Types.
 </details>
 
-2. `sf apex run --file apex/Document.apex -o YourOrgAlias`
-<details>s
+2. `sf apex run --file apex/DocumentUpload.apex -o YourOrgAlias`
+<details>
 <summary>Command Details</summary>
 Adds rows to the Decision Matrix for Document Upload.
+</details>
+
+### Straight Through Processing
+
+1. `sf project deploy start --metadata-dir metadata/StraightThroughProcessing -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates a Decision Matrix for Straight Through Processing.
+</details>
+
+2. `sf apex run --file apex/StraightThroughProcessing.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Adds rows to the Decision Matrix for Straight Through Processing.
+
+Activates Decision Matrix for Straight Through Processing.
 </details>
