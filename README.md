@@ -39,7 +39,9 @@ Assigns fieldpermissions to Admin and Sample Customer Community Plus Login User 
 Enables Context Definition in the org.
 </details>
 
-3. Navigate to `Product Discovery Settings` from Setup, and enable `Qualification Procedure`.
+3. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
+
+4. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
 
 In the above steps, a new custom field `City__c` has been created on `ProductQualification` object. We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want this field to be visible from Setup.
 
@@ -48,7 +50,9 @@ In the above steps, a new custom field `City__c` has been created on `ProductQua
 1. `sf apex run --file apex/ProductConfiguration.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-[??] Creates two product qualification records, one for auto loan, and another for personal loan.
+[TODO] Details about product config
+
+Creates a product qualification records.
 </details>
 
 ### Product Qualification

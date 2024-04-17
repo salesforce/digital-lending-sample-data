@@ -16,7 +16,7 @@
  */
 
 /**
- * This apex code will add rows to the IsSTPApplication Decision Matrix
+ * This apex code will add rows to the IsSTPApplication Decision Matrix and activate it
  * Usage:
  * From project root dir: sf apex run --file apex/StraightThroughProcessing.apex -o YourOrgAlias
  */ 
