@@ -15,6 +15,12 @@
  * limitations under the License.
  */
 
+/**
+ * TODO
+ * Usage:
+ * From project root dir: sf apex run --file apex/ProductConfiguration.apex -o YourOrgAlias
+ */
+
 String SAMPLE_PREFIX = 'sample_';
 
 ProductCatalog sample_catalog = 
