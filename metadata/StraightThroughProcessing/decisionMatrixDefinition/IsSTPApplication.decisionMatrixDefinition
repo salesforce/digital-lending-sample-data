@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>IsSTPApplication</label>
+    <processType>Bre</processType>
+    <type>Standard</type>
+    <versions>
+        <fullName>IsSTPApplication_V1</fullName>
+        <columns>
+            <columnType>Input</columnType>
+            <dataType>NumberRange</dataType>
+            <displaySequence>1</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>CreditScore</name>
+            <rangeValue>0,740</rangeValue>
+        </columns>
+        <columns>
+            <columnType>Output</columnType>
+            <dataType>Boolean</dataType>
+            <displaySequence>2</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>IsSTP</name>
+        </columns>
+        <decisionMatrixDefinition>IsSTPApplication</decisionMatrixDefinition>
+        <label>IsSTPApplication V1</label>
+        <startDate>2024-01-01T19:03:36.000Z</startDate>
+        <status>Draft</status>
+        <versionNumber>1</versionNumber>
+    </versions>
+</DecisionMatrixDefinition>

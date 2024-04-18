@@ -39,7 +39,9 @@ Assigns fieldpermissions to Admin and Sample Customer Community Plus Login User 
 Enables Context Definition in the org.
 </details>
 
-3. Navigate to `Product Discovery Settings` from Setup, and enable `Qualification Procedure`.
+3. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
+
+4. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
 
 In the above steps, a new custom field `City__c` has been created on `ProductQualification` object. We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want this field to be visible from Setup.
 
@@ -48,7 +50,9 @@ In the above steps, a new custom field `City__c` has been created on `ProductQua
 1. `sf apex run --file apex/ProductConfiguration.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-[??] Creates two product qualification records, one for auto loan, and another for personal loan.
+[TODO] Details about product config
+
+Creates a product qualification records.
 </details>
 
 ### Product Qualification
@@ -81,9 +85,9 @@ Creates Application Form, Application Form Text, Data Use Purpose, and Applicati
 Adds rows to the Decision Matrix for Disclosure And Consent.
 </details>
 
-### Document
+### Document Upload
 
-1. `sf project deploy start --metadata-dir metadata/Document -o YourOrgAlias`
+1. `sf project deploy start --metadata-dir metadata/DocumentUpload -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a Decision Matrix for Document Upload.
@@ -91,8 +95,24 @@ Creates a Decision Matrix for Document Upload.
 Creates two Document Types.
 </details>
 
-2. `sf apex run --file apex/Document.apex -o YourOrgAlias`
-<details>s
+2. `sf apex run --file apex/DocumentUpload.apex -o YourOrgAlias`
+<details>
 <summary>Command Details</summary>
 Adds rows to the Decision Matrix for Document Upload.
+</details>
+
+### Straight Through Processing
+
+1. `sf project deploy start --metadata-dir metadata/StraightThroughProcessing -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates a Decision Matrix for Straight Through Processing.
+</details>
+
+2. `sf apex run --file apex/StraightThroughProcessing.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Adds rows to the Decision Matrix for Straight Through Processing.
+
+Activates Decision Matrix for Straight Through Processing.
 </details>

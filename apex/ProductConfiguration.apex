@@ -15,6 +15,12 @@
  * limitations under the License.
  */
 
+/**
+ * TODO
+ * Usage:
+ * From project root dir: sf apex run --file apex/ProductConfiguration.apex -o YourOrgAlias
+ */
+
 String SAMPLE_PREFIX = 'sample_';
 
 ProductCatalog sample_catalog = 
@@ -150,7 +156,6 @@ System.debug(productClassificationAttr);
 System.debug('Creating product qualification ...');
 
 String autoLoanProductId = sample_product_auto_loan.Id;
-// String presonalLoanProductId = 'REPLACME';
 
 ProductQualification autoLoanQualification = 
     new ProductQualification(ProductId = autoLoanProductId,
@@ -158,24 +163,3 @@ ProductQualification autoLoanQualification =
                              EffectiveToDate = Date.newInstance(2030, 12, 31),
                              City__c = 'Frisco');
 insert autoLoanQualification;
-
-// ProductQualification personalLoanQualification = 
-//     new ProductQualification(ProductId = presonalLoanProductId,
-//                              EffectiveFromDate = Date.newInstance(2023, 1, 1),
-//                              EffectiveToDate = Date.newInstance(2030, 12, 31),
-//                              City__c = 'Pleasanton');
-// insert personalLoanQualification;
-
-System.debug(autoLoanQualification.id);
-// System.debug(personalLoanQualification.id);
-// System.debug('Created 2 product qualifications');
-
-
-
-
-
-
-
-
-
-
