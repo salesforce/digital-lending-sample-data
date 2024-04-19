@@ -21,6 +21,8 @@
  * From project root dir: sf apex run --file apex/RemoveData.apex -o YourOrgAlias
  */
 
+delete [SELECT Id FROM ProductListRate];
+
 delete [SELECT Id FROM ProductFee];
  
 delete [SELECT Id FROM ProductClassificationAttr];

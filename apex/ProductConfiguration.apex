@@ -167,4 +167,8 @@ insert autoLoanQualification;
 
 ProductFee productFee = new ProductFee(Amount = 1000, ProductId = sample_product_auto_loan.Id, Type = 'OriginationFee', ValidStartDate = Date.newInstance(1960, 2, 17), ValidEndDate = Date.newInstance(2029, 2, 17));
 insert productFee;
+System.debug(productFee);
+
+ProductListRate productListRate = new ProductListRate(ProductId = sample_product_auto_loan.Id, ListRate = 5, ValidStartDate = Date.newInstance(1960, 2, 17), ValidEndDate = Date.newInstance(2029, 2, 17));
+System.debug(productListRate);
 
