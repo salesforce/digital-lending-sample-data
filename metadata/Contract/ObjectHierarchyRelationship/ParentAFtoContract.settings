@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjectHierarchyRelationship xmlns="http://soap.sforce.com/2006/04/metadata">
+    <mappingType>Support</mappingType>
+    <masterLabel>ObjectHierarchyRelationship</masterLabel>
+    <parentObjectMapping>
+        <inputObject>ApplicationForm</inputObject>
+        <outputObject>Contract</outputObject>
+        <mappingFields>
+            <inputField>AccountId</inputField>
+            <outputField>AccountId</outputField>
+        </mappingFields>
+    </parentObjectMapping>
+    <parentRecord>ParentAFPtoContract</parentRecord>
+    <sourceReferenceRelaFieldName>ApplicationForm</sourceReferenceRelaFieldName>
+    <usageType>CLMFieldMapping</usageType>
+</ObjectHierarchyRelationship>

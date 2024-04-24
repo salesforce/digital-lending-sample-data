@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Activate the contract once it is signed.</description>
+        <name>ActivateContract</name>
+        <label>Activate Contract</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <actionName>performContractAction</actionName>
+        <actionType>performContractAction</actionType>
+        <faultConnector>
+            <targetReference>SendErrorEmailContractActivationFailure</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>contractId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>actionName</name>
+            <value>
+                <stringValue>{!ContractAction}</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>performContractAction</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls an action that sends an email to the admin when the contract couldn’t be activated. Before activating this flow, replace this value with the email address of the system admin to email in case of an error. To customize the subject of the email, change the ContractActivationSubject constant.</description>
+        <name>SendErrorEmailContractActivationFailure</name>
+        <label>Send Error Email</label>
+        <locationX>314</locationX>
+        <locationY>971</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>SystemAdminEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>{!ContractActivationSubject}</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <constants>
+        <description>Stores the name of the action that’s used to activate the contract in ActivateContract. Update this value with the appropriate action name that you use to activate the contract.</description>
+        <name>ContractAction</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>activateContract</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the subject of the email. To customize the subject of the email, change this value.</description>
+        <name>ContractActivationSubject</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Contract activation failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the email address of the system admin. Before activating this flow, replace this value with the email address of the system admin to be notified in case of an error.</description>
+        <name>SystemAdminEmail</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>system_admin_email</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>Determines whether an application form product record was found by checking if the ApplicationFormProduct variable has a value.</description>
+        <name>HaveApplicationFormProductRecord</name>
+        <label>Have Application Form Product Record?</label>
+        <locationX>776</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>HasApplicationFormProductRecord</name>
+            <conditionLogic>1</conditionLogic>
+            <conditions>
+                <leftValueReference>ApplicationFormProduct</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>WhatIsTheContractSignatureStatus</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Determines the status of the triggering contract.</description>
+        <name>WhatIsTheContractSignatureStatus</name>
+        <label>What is the Contract Signature Status?</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsSigned</name>
+            <conditionLogic>1</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Signed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateApplicationFormProductSignatureComplete</targetReference>
+            </connector>
+            <label>Signed</label>
+        </rules>
+        <rules>
+            <name>IsSignatureDeclined</name>
+            <conditionLogic>1</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Signature Declined</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateApplicationFormProductInReview</targetReference>
+            </connector>
+            <label>Signature Declined</label>
+        </rules>
+    </decisions>
+    <description>Activates a contract when it’s signed by the applicant.</description>
+    <environments>Default</environments>
+    <interviewLabel>Sample Digital Lending: Activate Signed Contract Clone {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sample Digital Lending: Activate Signed Contract Clone</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Gets the application form product record with an ID that matches the application form product ID of the record that triggered the flow. Stores the ID and Stage of the result in the ApplicationFormProduct record variable.</description>
+        <name>GetApplicationFormProduct</name>
+        <label>Get Application Form Product</label>
+        <locationX>776</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>HaveApplicationFormProductRecord</targetReference>
+        </connector>
+        <filterLogic>1</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SourceApplicationFormProduct__r.Id</elementReference>
+            </value>
+        </filters>
+        <object>ApplicationFormProduct</object>
+        <outputReference>ApplicationFormProduct</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <description>Updates the application form product record with an ID that matches the application form product ID of the record that triggered the flow, setting the stage to In Review.</description>
+        <name>UpdateApplicationFormProductInReview</name>
+        <label>Update Application Form Product</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <filterLogic>1</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SourceApplicationFormProduct__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage</field>
+            <value>
+                <stringValue>In Review</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ApplicationFormProduct</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates the application form product record with an ID that matches the application form product ID of the record that triggered the flow, setting the stage to Signature Complete.</description>
+        <name>UpdateApplicationFormProductSignatureComplete</name>
+        <label>Update Application Form Product</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>UpdateContractDetails</targetReference>
+        </connector>
+        <filterLogic>1</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.SourceApplicationFormProduct__r.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Stage</field>
+            <value>
+                <stringValue>Signature Complete</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ApplicationFormProduct</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Updates the contract record that triggered the flow, setting the start date to the current date, activated by ID to user ID of the user who activated the contract, and activated date to the current date and time.</description>
+        <name>UpdateContractDetails</name>
+        <label>Update Contract Details</label>
+        <locationX>50</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>ActivateContract</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>ActivatedById</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ActivatedDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDate</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>650</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetApplicationFormProduct</targetReference>
+        </connector>
+        <filterLogic>(1 OR 2) AND 3</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Signed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Signature Declined</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Contract</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Store the ID and Stage of the application form product returned by GetApplicationFormProduct.</description>
+        <name>ApplicationFormProduct</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ApplicationFormProduct</objectType>
+    </variables>
+</Flow>

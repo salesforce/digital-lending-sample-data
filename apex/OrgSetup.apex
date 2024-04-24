@@ -18,7 +18,6 @@
 /**
  * This apex code will assign permission sets to the user.
  * Usage:
- * Execute this script before any other scripts
  * From project root dir: sf apex run --file apex/OrgSetup.apex -o YourOrgAlias
  */ 
 
