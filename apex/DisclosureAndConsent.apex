@@ -19,7 +19,6 @@
  * This apex code will create Application Form, Application Form Text, Data Use Purpose, and ApplicationFormDataUse record
  * It will also add rows to the LendingDataUsePurposes Decision Matrix
  * Usage:
- * Execute this script after ProductConfiguration.apex
  * From project root dir: sf apex run --file apex/DisclosureAndConsent.apex -o YourOrgAlias
  */ 
 

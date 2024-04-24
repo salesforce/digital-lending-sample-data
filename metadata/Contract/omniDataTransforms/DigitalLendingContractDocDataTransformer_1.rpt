@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;InterestRate&quot; : 10,
+  &quot;Applicants&quot; : [ {
+    &quot;LastName&quot; : &quot;Garlapati&quot;,
+    &quot;Index&quot; : &quot;1&quot;,
+    &quot;FirstName&quot; : &quot;Suresh&quot;
+  }, {
+    &quot;LastName&quot; : &quot;Ma&quot;,
+    &quot;Index&quot; : &quot;2&quot;,
+    &quot;FirstName&quot; : &quot;Zhiyuan&quot;
+  } ],
+  &quot;EstimatedMonthlyPayment&quot; : &quot;$45,454.00&quot;,
+  &quot;LoanTerm&quot; : 36,
+  &quot;ProductName&quot; : &quot;Personal Loan&quot;,
+  &quot;LoanAmount&quot; : &quot;$4,545.00&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;InterestRate&quot; : 10,
+  &quot;Applicants&quot; : [ {
+    &quot;LastName&quot; : &quot;Garlapati&quot;,
+    &quot;Index&quot; : &quot;1&quot;,
+    &quot;FirstName&quot; : &quot;Suresh&quot;
+  }, {
+    &quot;LastName&quot; : &quot;Ma&quot;,
+    &quot;Index&quot; : &quot;2&quot;,
+    &quot;FirstName&quot; : &quot;Zhiyuan&quot;
+  } ],
+  &quot;EstimatedMonthlyPayment&quot; : &quot;$45,454.00&quot;,
+  &quot;LoanTerm&quot; : 36,
+  &quot;ProductName&quot; : &quot;Personal Loan&quot;,
+  &quot;LoanAmount&quot; : &quot;$4,545.00&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <name>DigitalLendingContractDocDataTransformer</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingContractDocDataTransformerCustom7385</globalKey>
+        <inputFieldName>LoanAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingContractDocDataTransformer</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LoanAmount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingContractDocDataTransformerCustom3995</globalKey>
+        <inputFieldName>Applicants:Index</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingContractDocDataTransformer</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Applicants:Index</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingContractDocDataTransformerCustom9708</globalKey>
+        <inputFieldName>InterestRate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingContractDocDataTransformer</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>InterestRate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingContractDocDataTransformerCustom8123</globalKey>
+        <inputFieldName>EstimatedMonthlyPayment</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingContractDocDataTransformer</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EstimatedMonthlyPayment</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingContractDocDataTransformerCustom35</globalKey>
+        <inputFieldName>Applicants:LastName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingContractDocDataTransformer</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Applicants:LastName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingContractDocDataTransformerCustom6172</globalKey>
+        <inputFieldName>Applicants:FirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingContractDocDataTransformer</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Applicants:FirstName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingContractDocDataTransformerCustom8523</globalKey>
+        <inputFieldName>ProductName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingContractDocDataTransformer</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ProductName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DigitalLendingContractDocDataTransformerCustom8543</globalKey>
+        <inputFieldName>LoanTerm</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DigitalLendingContractDocDataTransformer</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LoanTerm</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;InterestRate&quot; : 10,
+  &quot;Applicants&quot; : [ {
+    &quot;LastName&quot; : &quot;Garlapati&quot;,
+    &quot;Index&quot; : &quot;1&quot;,
+    &quot;FirstName&quot; : &quot;Suresh&quot;
+  }, {
+    &quot;LastName&quot; : &quot;Ma&quot;,
+    &quot;Index&quot; : &quot;2&quot;,
+    &quot;FirstName&quot; : &quot;Zhiyuan&quot;
+  } ],
+  &quot;EstimatedMonthlyPayment&quot; : &quot;$45,454.00&quot;,
+  &quot;LoanTerm&quot; : 36,
+  &quot;ProductName&quot; : &quot;Personal Loan&quot;,
+  &quot;LoanAmount&quot; : &quot;$4,545.00&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <targetOutputFileName>SAMPLE_LoanApprovalTemplate(Version 1)</targetOutputFileName>
+    <type>Transform</type>
+    <uniqueName>DigitalLendingContractDocDataTransformer_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

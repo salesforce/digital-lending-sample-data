@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileUploadAndDownloadSecuritySettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dispositions>
+        <behavior>EXECUTE_IN_BROWSER</behavior>
+        <fileType>PDF</fileType>
+        <securityRiskFileType>false</securityRiskFileType>
+    </dispositions>
+    <noHtmlUploadAsAttachment>false</noHtmlUploadAsAttachment>
+</FileUploadAndDownloadSecuritySettings>

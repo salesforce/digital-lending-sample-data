@@ -63,3 +63,5 @@ for (CalculationMatrixVersion version : versions) {
 }
 update versions;
 delete [SELECT Id FROM CalculationMatrixRow];
+
+delete [SELECT Id FROM DocumentTemplate];

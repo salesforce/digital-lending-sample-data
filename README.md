@@ -19,7 +19,7 @@ Connect to your org using `sf org login web -a YourOrgAlias -r YOURURL` command.
 
 ### Org Setup
 
-1. `sf apex run --file apex/OrgSetup.apex -o YourOrgAlias`
+1. Run `sf apex run --file apex/OrgSetup.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a custom permission set SampleDigitalLendingClone. 
@@ -27,7 +27,7 @@ Creates a custom permission set SampleDigitalLendingClone.
 Assigns this and several other permission sets to the user.
 </details>
 
-2. `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
+2. Run `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a custom profile: Sample Customer Community Plus Login User Clone.
@@ -47,7 +47,7 @@ In the above steps, a new custom field `City__c` has been created on `ProductQua
 
 ### Product Configuration
 
-1. `sf apex run --file apex/ProductConfiguration.apex -o YourOrgAlias`
+1. Run `sf apex run --file apex/ProductConfiguration.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 [TODO] Details about product config
@@ -57,13 +57,13 @@ Creates a product qualification records.
 
 ### Product Qualification
 
-1. `sf project deploy start --metadata-dir metadata/ProductQualificationSetup -o YourOrgAlias`
+1. Run `sf project deploy start --metadata-dir metadata/ProductQualificationSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a Decision Table for Product Qualification.
 </details>
 
-2. `sf project deploy start --metadata-dir metadata/ProductQualificationExpressionSet -o YourOrgAlias`
+2. Run `sf project deploy start --metadata-dir metadata/ProductQualificationExpressionSet -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates two expression sets for Product Qualification.
@@ -71,13 +71,13 @@ Creates two expression sets for Product Qualification.
 
 ### Disclosure And Consent
 
-1. `sf project deploy start --metadata-dir metadata/DisclosureAndConsent -o YourOrgAlias`
+1. Run `sf project deploy start --metadata-dir metadata/DisclosureAndConsent -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a Decision Matrix for Disclosure And Consent.
 </details>
 
-2. `sf apex run --file apex/DisclosureAndConsent.apex -o YourOrgAlias`
+2. Run `sf apex run --file apex/DisclosureAndConsent.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates Application Form, Application Form Text, Data Use Purpose, and ApplicationFormDataUse record.
@@ -87,7 +87,7 @@ Adds rows to the Decision Matrix for Disclosure And Consent.
 
 ### Document Upload
 
-1. `sf project deploy start --metadata-dir metadata/DocumentUpload -o YourOrgAlias`
+1. Run `sf project deploy start --metadata-dir metadata/DocumentUpload -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a Decision Matrix for Document Upload.
@@ -95,7 +95,7 @@ Creates a Decision Matrix for Document Upload.
 Creates two Document Types.
 </details>
 
-2. `sf apex run --file apex/DocumentUpload.apex -o YourOrgAlias`
+2. Run `sf apex run --file apex/DocumentUpload.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Adds rows to the Decision Matrix for Document Upload.
@@ -103,16 +103,40 @@ Adds rows to the Decision Matrix for Document Upload.
 
 ### Straight Through Processing
 
-1. `sf project deploy start --metadata-dir metadata/StraightThroughProcessing -o YourOrgAlias`
+1. Run `sf project deploy start --metadata-dir metadata/StraightThroughProcessing -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a Decision Matrix for Straight Through Processing.
 </details>
 
-2. `sf apex run --file apex/StraightThroughProcessing.apex -o YourOrgAlias`
+2. Run `sf apex run --file apex/StraightThroughProcessing.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Adds rows to the Decision Matrix for Straight Through Processing.
 
 Activates Decision Matrix for Straight Through Processing.
+</details>
+
+### Contracts
+
+1. Navigate to `Contract Lifecycle Management`'s `General Settings` from Setup (`Feature Settings` &rarr; `Contract Lifecycle Management` &rarr; `General Settings`), and enable `Salesforce Contracts`.
+
+2. Navigate to `Document Generation`'s `General Settings` from Setup (`Feature Settings` &rarr; `Document Generation` &rarr; `General Settings`), and enable `Design Document Templates in Salesforce`.
+
+3. In the files `SampleDigitalLendingActivateSignedContractClone.flow`, `SampleDigitalLendingGenerateOrUpdateContractClone.flow`, `SampleDigitalLendingUpdateDocumentGenerationClone.flow` in the folder `metadata/Contract/flows/` replace `system_admin_email` with system admin's email.
+
+4. Run `sf project deploy start --metadata-dir metadata/Contract -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Adds apex classes, decision matrix, document templates, flows, data raptors used for contract generation.
+
+Also sets various settings: contract types, document generation settings, object hierarchy relationship, and file upload and download security settings which are required for contract generation.
+</details>
+
+5. Run `sf apex run --file apex/Contract.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Activates document templates.
+
+Adds rows to the Decision Matrix for Contract Generation.
 </details>
