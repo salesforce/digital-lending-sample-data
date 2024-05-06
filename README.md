@@ -183,3 +183,13 @@ Sets pricing pref, creates decision tables and expression set definition used fo
 <summary>Command Details</summary>
 Creates expression set definition used for pricing.
 </details>
+
+### Participant role for Compliant Data Sharing 
+
+1. Navigate to `Compliant Data Sharing`'s `Object Enablement Settings` from Setup and enable `Compliant Data Sharing for CRM Users` for `Application Form` Object.
+
+2. Run `sf project deploy start --metadata-dir metadata/CompliantDataSharing -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates Application Form Participant Role With Read/Write access level
+</details>

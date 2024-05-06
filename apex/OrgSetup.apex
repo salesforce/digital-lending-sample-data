@@ -48,7 +48,7 @@ List<String> permissionSetNames = new List<String> {'BREDesigner',
                                                     'ProductCatalogManagementViewer',
                                                     'ProductDiscoveryAdmin', 
                                                     'ProductDiscoveryUser',
-                                                    'SampleDigitalLendingClone'};
+                                                    PREFIX + 'DigitalLendingClone'};
 
 List<PermissionSetAssignment> assignedPermissions = [SELECT PermissionSet.Name 
                                                      FROM PermissionSetAssignment 
