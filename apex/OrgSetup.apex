@@ -32,8 +32,7 @@ dlps.PermissionsConfigCompliantDataSharing = true;
 insert dlps;
 
 String userId = UserInfo.getUserId();
-List<String> permissionSetNames = new List<String> {'BREAdvancedDesignerPsl',
-                                                    'BREDesigner',
+List<String> permissionSetNames = new List<String> {'BREDesigner',
                                                     'BRERuntime',
                                                     'CLMAdminUser',
                                                     'CLMRuntimeUser',

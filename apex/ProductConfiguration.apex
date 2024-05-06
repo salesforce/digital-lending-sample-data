@@ -81,7 +81,7 @@ insert omniscriptName;
 System.debug(omniscriptName);
 
 AttributePicklist attributePicklistLoanTerm =
-    new AttributePicklist(Name = 'LoanTerm', Description='LoanTerm',  DataType='Text', Status = 'Active');
+    new AttributePicklist(Name = 'LoanTerm', Description='LoanTerm', Code = '1',  DataType='Text', Status = 'Active');
 
 insert attributePicklistLoanTerm;
 
