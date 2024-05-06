@@ -27,7 +27,11 @@ Creates a custom permission set SampleDigitalLendingClone.
 Assigns this and several other permission sets to the user.
 </details>
 
-2. Run `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
+2. Navigate to `Contract Lifecycle Management`'s `General Settings` from Setup (`Feature Settings` &rarr; `Contract Lifecycle Management` &rarr; `General Settings`), and enable `Salesforce Contracts`.
+
+3. Navigate to `Document Generation`'s `General Settings` from Setup (`Feature Settings` &rarr; `Document Generation` &rarr; `General Settings`), and enable `Design Document Templates in Salesforce`.
+
+4. Run `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a custom profile: Sample Customer Community Plus Login User Clone.
@@ -39,11 +43,13 @@ Assigns fieldpermissions to Admin and Sample Customer Community Plus Login User 
 Enables Context Definition in the org.
 </details>
 
-3. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
+5. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
 
-4. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
+6. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
 
-In the above steps, a new custom field `City__c` has been created on `ProductQualification` object. We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want this field to be visible from Setup.
+In the above steps, new custom field `City__c` has been created on `ProductQualification` object and `SourceApplicationFormProduct__c` has been created on `Contract` object, 
+`Product__c`, `LowerBound__c`, `UpperBound__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByCreditScore__c` and `Product__c`, `Term__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByTerm__c`. 
+We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want these fields to be visible from Setup.
 
 ### Product Configuration
 
@@ -119,13 +125,9 @@ Activates Decision Matrix for Straight Through Processing.
 
 ### Contracts
 
-1. Navigate to `Contract Lifecycle Management`'s `General Settings` from Setup (`Feature Settings` &rarr; `Contract Lifecycle Management` &rarr; `General Settings`), and enable `Salesforce Contracts`.
+1. In the files `SampleDigitalLendingActivateSignedContractClone.flow`, `SampleDigitalLendingGenerateOrUpdateContractClone.flow`, `SampleDigitalLendingUpdateDocumentGenerationClone.flow` in the folder `metadata/Contract/flows/` replace `system_admin_email` with system admin's email.
 
-2. Navigate to `Document Generation`'s `General Settings` from Setup (`Feature Settings` &rarr; `Document Generation` &rarr; `General Settings`), and enable `Design Document Templates in Salesforce`.
-
-3. In the files `SampleDigitalLendingActivateSignedContractClone.flow`, `SampleDigitalLendingGenerateOrUpdateContractClone.flow`, `SampleDigitalLendingUpdateDocumentGenerationClone.flow` in the folder `metadata/Contract/flows/` replace `system_admin_email` with system admin's email.
-
-4. Run `sf project deploy start --metadata-dir metadata/Contract -o YourOrgAlias`
+2. Run `sf project deploy start --metadata-dir metadata/Contract -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Adds apex classes, decision matrix, document templates, flows, data raptors used for contract generation.
@@ -133,12 +135,53 @@ Adds apex classes, decision matrix, document templates, flows, data raptors used
 Also sets various settings: contract types, document generation settings, object hierarchy relationship, and file upload and download security settings which are required for contract generation.
 </details>
 
-5. Run `sf apex run --file apex/Contract.apex -o YourOrgAlias`
+3. Run `sf apex run --file apex/Contract.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Activates document templates.
 
 Adds rows to the Decision Matrix for Contract Generation.
+</details>
+
+### Pricing
+
+1. Run `sf apex run --file apex/Pricing.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Adds records in the custom objects for Pricing.
+</details>
+
+2. Run `sf project deploy start --metadata-dir metadata/PricingSetup -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Sets pricing pref, creates decision tables and expression set definition used for pricing.
+</details>
+
+3. Update Lookup Table's Component Type
+<details>
+<summary>Steps</summary>
+
+1. Go to Setup > Pricing Recipes > NGPDefaultRecipe > Click Modify 
+
+2. Update CreditScoreBasedAdjustment's Variable Mapping to TierValue__c for AdjustmentValue and TierType__c for AdjustmentType
+
+3. Update ProductListRateDT's Pricing Component Type to List Price and update the Variable Mapping to List Rate for UnitPrice
+
+4. Update TermBasedAdjustmentDT's Variable Mapping to TierValue__c for AdjustmentValue and TierType__c for AdjustmentType
+
+5. Select CreditScoreBasedAdjustment, ProductListRateDT and TermBasedAdjustmentDT by clicking on the + button
+
+6. Save
+</details>
+
+4. Update decision tables ProductListRateDT, TermBasedAdjustmentDT and CreditScoreBasedAdjustment status to Active
+
+5. Update LookUpId for above 3 decision tables in expression set file AppFormProductProposalProc.expressionSetDefinition
+
+6. Run `sf project deploy start --metadata-dir metadata/PricingExpressionSet -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates expression set definition used for pricing.
 </details>
 
 ### Participant role for Compliant Data Sharing 
