@@ -15,7 +15,8 @@
         <name>Profile</name>
     </types>
     <types>
-        <members>*</members>
+        <members>IndustriesContext</members>
+        <members>IndustriesPricing</members>
         <name>Settings</name>
     </types>
     <types>
