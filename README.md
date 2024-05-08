@@ -154,7 +154,7 @@ Adds records in the custom objects for Pricing.
 2. Run `sf project deploy start --metadata-dir metadata/PricingSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-Sets pricing pref, creates decision tables and expression set definition used for pricing.
+Creates decision tables used for pricing.
 </details>
 
 3. Update Lookup Table's Component Type
