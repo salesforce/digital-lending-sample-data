@@ -1,4 +1,4 @@
-public class GetEsignRecipients implements ind_docgen_api.OpenInterface {
+public with sharing class GetEsignRecipients implements ind_docgen_api.OpenInterface {
 
     private static final String ERROR_UNSUPPORTED = 'Unsupported method. Only method [getRecipients] is supported.';
     private static final String ERROR_NO_RECIPIENTS = 'Recipient data not found';

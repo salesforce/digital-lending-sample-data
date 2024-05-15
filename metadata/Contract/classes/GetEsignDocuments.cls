@@ -1,4 +1,4 @@
-global class GetEsignDocuments implements ind_docgen_api.OpenInterface {
+public with sharing class GetEsignDocuments implements ind_docgen_api.OpenInterface {
     private static final String ERROR_UNSUPPORTED = 'Unsupported method. Only method [getDocuments] is supported.';
 
     public Boolean invokeMethod(String methodName, Map<String, Object> request, Map<String, Object> outMap) {
