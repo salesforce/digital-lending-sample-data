@@ -16,7 +16,8 @@
  */
 
 /**
- * This apex code activates document templates and adds rows to the Get_Document_Template_from_Product decision matrix
+ * This apex code activates document templates and adds rows to the Get_Document_Template_from_Product decision matrix.
+ * Creates an Object State Transition record.
  * Usage:
  * From project root dir: sf apex run --file apex/Contract.apex -o YourOrgAlias
  */ 
@@ -71,3 +72,24 @@ rows.add(new CalculationMatrixRow(CalculationMatrixVersionId = calculationMatrix
                                       OutputData = outputData));
 
 insert rows;
+
+//Set objectStateDefinition status to not active
+List<ObjectStateDefinition> objectStateDefinitions = [SELECT Id, IsActive FROM ObjectStateDefinition WHERE Name = 'Contract LifeCycle Management'];
+objectStateDefinitions.get(0).IsActive = false;
+update objectStateDefinitions;
+
+
+List<ObjectStateValue> objectStateValueDraft = [SELECT Id, Name FROM ObjectStateValue WHERE Name = 'Draft'];
+List<ObjectStateValue> objectStateValueAwaitingSignature = [SELECT Id, Name FROM ObjectStateValue WHERE Name = 'Awaiting Signature'];
+
+// Insert objectStateTransition
+List<ObjectStateTransition> objectStateTransitions = new List<ObjectStateTransition>();
+objectStateTransitions.add(new ObjectStateTransition(Name = 'Draft_To_AwaitingSignature',
+                                ObjectStateDefinitionId = objectStateDefinitions.get(0).Id,
+                                FromStateId = objectStateValueDraft.get(0).Id,
+                                ToStateId = objectStateValueAwaitingSignature.get(0).Id));
+insert objectStateTransitions;
+
+//Set objectStateDefinition status to active
+objectStateDefinitions.get(0).IsActive = true;
+update objectStateDefinitions;
