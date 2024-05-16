@@ -143,6 +143,28 @@ Activates document templates.
 Adds rows to the Decision Matrix for Contract Generation.
 </details>
 
+#### Electronic Signature for Contracts
+
+1. Sign up for a DocuSign Developer edition account and create an application as mentioned in steps 1-3 here https://help.salesforce.com/s/articleView?id=ind.sf_contracts_Create_an_Auth_Provider_for_DocuSign.htm&type=5
+
+2. Replace the `consumerKey` and `consumerSecret` in the file `DocuSign.authprovider` with the DocuSign App's Integration Key and DocuSign App's Secret Key from your Docusign account. Replace `configValue` in `DocuSigneSignVendorAccountId.eSignatureConfig` with the API AccountId from DocuSign account. Replace `vendorAccountIdentifier` in `DocuSign_Contract.eSignatureEnvelopeConfig` with the API AccountId from DocuSign account.
+
+3. Run `sf project deploy start --metadata-dir metadata/ESign -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates Email Template, Auth Provider, Named Credential, ESignatureConfig and ESignatureEnvelopeConfig for Electronic Signature.
+</details>
+
+4. Do the steps 12 to 15 as mentioned here https://help.salesforce.com/s/articleView?id=ind.sf_contracts_Create_an_Auth_Provider_for_DocuSign.htm&type=5
+
+5. Edit Named Credential called `DocuSignAuthProvider` created in your org as part of previous step to trigger authentication with DocuSign.
+
+6. Run `sf apex run --file apex/ESign.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates Object State Transition for Electronic Signature.
+</details>
+
 ### Pricing
 
 1. Run `sf apex run --file apex/Pricing.apex -o YourOrgAlias`
