@@ -138,7 +138,7 @@ Adds apex classes, decision matrix, document templates, flows, data raptors used
 
 Sets various settings: contract types, document generation settings, object hierarchy relationship, and file upload and download security settings which are required for contract generation.
 
-Creates Email Template, Auth Provider, Named Credential, ESignatureConfig and ESignatureEnvelopeConfig for Electronic Signature.
+Creates Email Template, Auth Provider, Named Credential, ESignatureConfig, RemoteSiteSetting and ESignatureEnvelopeConfig for Electronic Signature.
 </details>
 
 5. Do the steps 12 to 15 as mentioned here https://help.salesforce.com/s/articleView?id=ind.sf_contracts_Create_an_Auth_Provider_for_DocuSign.htm&type=5

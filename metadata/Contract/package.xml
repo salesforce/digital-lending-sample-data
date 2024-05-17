@@ -59,6 +59,10 @@
     </types>
     <types>
         <members>*</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ESignatureEnvelopeConfig</name>
     </types>
     <version>61.0</version>
