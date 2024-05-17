@@ -11,4 +11,6 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <externalSharingModel>Read</externalSharingModel>
+    <sharingModel>Read</sharingModel>
 </CustomObject>
