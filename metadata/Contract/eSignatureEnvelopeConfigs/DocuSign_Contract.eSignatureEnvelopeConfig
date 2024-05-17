@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ESignatureEnvelopeConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <expirationPeriod>5</expirationPeriod>
+    <expirationWarningPeriod>1</expirationWarningPeriod>
+    <firstReminderPeriod>2</firstReminderPeriod>
+    <isExpirationEnabled>false</isExpirationEnabled>
+    <isReminderEnabled>false</isReminderEnabled>
+    <isVendorDefaultNtfcnEnabled>false</isVendorDefaultNtfcnEnabled>
+    <masterLabel>DocuSign_Contract</masterLabel>
+    <reminderIntervalPeriod>1</reminderIntervalPeriod>
+    <targetObjectName>Contract</targetObjectName>
+    <vendor>DocuSign</vendor>
+    <vendorAccountIdentifier>a28d0048-27ad-4ce1-97f3-d91bc27f5197</vendorAccountIdentifier>
+</ESignatureEnvelopeConfig>

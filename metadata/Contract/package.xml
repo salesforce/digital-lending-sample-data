@@ -36,5 +36,34 @@
         <members>*</members>
         <name>Settings</name> 
     </types>
+    <types>
+        <members>unfiled$public/DocusignEmailTemplate</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuthProvider</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>DocuSignAnchorString</members>
+        <members>DocuSignCalloutNamedCredential</members>
+        <members>DocuSignDocumentsCustomClass</members>
+        <members>DocuSigneSignVendorAccountId</members>
+        <members>DocuSignRecipientsCustomClass</members>
+        <members>DocuSignSignerRoles</members>
+        <name>ESignatureConfig</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ESignatureEnvelopeConfig</name>
+    </types>
     <version>61.0</version>
 </Package>

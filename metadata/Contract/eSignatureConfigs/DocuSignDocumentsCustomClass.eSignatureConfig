@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ESignatureConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <configType>DocumentsCustomClass</configType>
+    <configValue>GetEsignDocuments</configValue>
+    <groupType>CustomClassSetting</groupType>
+    <masterLabel>DocuSignDocumentsCustomClass</masterLabel>
+    <vendor>DocuSign</vendor>
+</ESignatureConfig>

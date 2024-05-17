@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ESignatureConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <configType>SignerRoles</configType>
+    <configValue>Signer1, Signer2, Signer3, Signer4, Signer5</configValue>
+    <groupType>AnchorTabSetting</groupType>
+    <masterLabel>DocuSignSignerRoles</masterLabel>
+    <vendor>DocuSign</vendor>
+</ESignatureConfig>
