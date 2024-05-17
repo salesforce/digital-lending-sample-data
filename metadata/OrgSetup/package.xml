@@ -23,5 +23,9 @@
         <members>*</members>
         <name>StandardValueSet</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
     <version>61.0</version>
 </Package>
