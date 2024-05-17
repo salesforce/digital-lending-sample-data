@@ -256,18 +256,6 @@
         <object>ProductListRate</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <recordTypeVisibilities>
-        <recordType>Account.BusinessAccount</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <recordType>PersonAccount.PersonAccount</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
-    <tabSettings>
-        <tab>standard-ProductListRate</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
     <userPermissions>
         <enabled>true</enabled>
         <name>AccessToComplaintMgmt</name>

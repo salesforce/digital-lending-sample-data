@@ -24,7 +24,7 @@
         <name>StandardValueSet</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Custom_Financial_Services_For_Customer_Community_Plus_Login</members>
         <name>PermissionSet</name>
     </types>
     <version>61.0</version>
