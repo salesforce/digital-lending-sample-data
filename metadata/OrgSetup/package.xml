@@ -6,8 +6,7 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>RateAdjustmentByCreditScore__c</members>
-        <members>RateAdjustmentByTerm__c</members>
+        <members>*</members>
         <name>CustomObject</name>
     </types>
     <types>
