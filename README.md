@@ -62,7 +62,13 @@ We also assigned field permissions for two profiles. Assign field permissions to
 1. Run `sf apex run --file apex/ProductConfiguration.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-[TODO] Details about product config
+Create a product catalog record, a product category record associate with a product record.
+
+Create five product attributes for this sample product according to the document.
+
+Create product list rate record and product fee record for the sample product.
+
+You could also add product image and turn on sharing settings for community user for this sample product by following the document. 
 
 Creates a product qualification records.
 </details>
