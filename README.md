@@ -25,6 +25,12 @@ Connect to your org using `sf org login web -a YourOrgAlias -r YOURURL` command.
 Creates a custom permission set SampleDigitalLendingClone. 
 
 Assigns this and several other permission sets to the user.
+
+Creates Sample Financial Services For Customer Community Plus Login Clone permission set, enable object permission for community user
+
+Creates Sample Customer Community Plus Login User Clone profile, added object permissions and user permissions for community user
+
+Updated Sharing Settings to expose objects to community users
 </details>
 
 2. Navigate to `Contract Lifecycle Management`'s `General Settings` from Setup (`Feature Settings` &rarr; `Contract Lifecycle Management` &rarr; `General Settings`), and enable `Salesforce Contracts`.
