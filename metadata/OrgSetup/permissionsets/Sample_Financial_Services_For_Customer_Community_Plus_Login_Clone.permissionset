@@ -222,23 +222,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>FSCInsuranceCmpCmtyAccess</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>FSCInsurancePlatformUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>IndustryMilestonePlatformUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>KycPlatformUser</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>MortgageUserAccess</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

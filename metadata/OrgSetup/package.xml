@@ -10,11 +10,6 @@
         <name>CustomObject</name>
     </types>
     <types>
-        <members>Admin</members>
-        <members>Sample Customer Community Plus Login User Clone</members>
-        <name>Profile</name>
-    </types>
-    <types>
         <members>IndustriesContext</members>
         <members>IndustriesPricing</members>
         <members>Industries</members>
