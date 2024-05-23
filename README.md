@@ -25,12 +25,6 @@ Connect to your org using `sf org login web -a YourOrgAlias -r YOURURL` command.
 Creates a custom permission set SampleDigitalLendingClone. 
 
 Assigns this and several other permission sets to the user.
-
-Creates Sample Financial Services For Customer Community Plus Login Clone permission set, enable object permission for community user
-
-Creates Sample Customer Community Plus Login User Clone profile, added object permissions and user permissions for community user
-
-Updated Sharing Settings to expose objects to community users
 </details>
 
 2. Navigate to `Contract Lifecycle Management`'s `General Settings` from Setup (`Feature Settings` &rarr; `Contract Lifecycle Management` &rarr; `General Settings`), and enable `Salesforce Contracts`.
@@ -40,18 +34,27 @@ Updated Sharing Settings to expose objects to community users
 4. Run `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-Creates a custom profile: Sample Customer Community Plus Login User Clone.
 
-Creates a custom field City on ProductQualification object. 
+Creates a custom field City on ProductQualification object.
 
-Assigns fieldpermissions to Admin and Sample Customer Community Plus Login User Clone profiles for the new field.
+Enables Context Definition, Salesforce Pricing and Industries KYC in the org.
 
-Enables Context Definition in the org.
+Creates Sample Financial Services For Customer Community Plus Login Clone permission set
 </details>
 
-5. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
+5. Run `sf project deploy start --metadata-dir metadata/Profiles -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates a custom profile called Sample Customer Community Plus Login User Clone, adds object permissions and user permissions for community user
 
-6. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
+Assigns fieldpermissions to Admin and Sample Customer Community Plus Login User Clone profiles for the new custom field City.
+
+Updated Sharing Settings to expose objects to community users
+</details>
+
+6. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
+
+7. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
 
 In the above steps, new custom field `City__c` has been created on `ProductQualification` object and `SourceApplicationFormProduct__c` has been created on `Contract` object, 
 `Product__c`, `LowerBound__c`, `UpperBound__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByCreditScore__c` and `Product__c`, `Term__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByTerm__c`. 
