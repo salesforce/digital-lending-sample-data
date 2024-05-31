@@ -54,8 +54,6 @@ Updated Sharing Settings to expose objects to community users
 
 6. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
 
-7. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
-
 In the above steps, new custom field `City__c` has been created on `ProductQualification` object and `SourceApplicationFormProduct__c` has been created on `Contract` object, 
 `Product__c`, `LowerBound__c`, `UpperBound__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByCreditScore__c` and `Product__c`, `Term__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByTerm__c`. 
 We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want these fields to be visible from Setup.
@@ -213,9 +211,7 @@ Creates expression set definition used for pricing.
 
 ### Participant role for Compliant Data Sharing 
 
-1. Navigate to `Compliant Data Sharing`'s `Object Enablement Settings` from Setup and enable `Compliant Data Sharing for CRM Users` for `Application Form` Object.
-
-2. Run `sf project deploy start --metadata-dir metadata/CompliantDataSharing -o YourOrgAlias`
+1. Run `sf project deploy start --metadata-dir metadata/CompliantDataSharing -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates Application Form Participant Role With Read/Write access level
