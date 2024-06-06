@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Medical Prescriptions and Expenses</fullName>
+        <default>false</default>
+        <label>Medical Prescriptions and Expenses</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Health and Hospitalization Insurance Premiums</fullName>
+        <default>false</default>
+        <label>Health and Hospitalization Insurance Premiums</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Child Care</fullName>
+        <default>false</default>
+        <label>Child Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Spousal Support</fullName>
+        <default>false</default>
+        <label>Spousal Support</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Child Support</fullName>
+        <default>false</default>
+        <label>Child Support</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Garnishments</fullName>
+        <default>false</default>
+        <label>Garnishments</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Representative Payee</fullName>
+        <default>false</default>
+        <label>Representative Payee</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Reimbursement</fullName>
+        <default>false</default>
+        <label>Reimbursement</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Utilities</fullName>
+        <default>false</default>
+        <label>Utilities</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Food &amp; Dining</fullName>
+        <default>false</default>
+        <label>Food &amp; Dining</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Debt</fullName>
+        <default>false</default>
+        <label>Debt</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Housing</fullName>
+        <default>false</default>
+        <label>Housing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transportation</fullName>
+        <default>false</default>
+        <label>Transportation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Insurance</fullName>
+        <default>false</default>
+        <label>Insurance</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mobile Device</fullName>
+        <default>false</default>
+        <label>Mobile Device</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Entertainment</fullName>
+        <default>false</default>
+        <label>Entertainment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Clothing</fullName>
+        <default>false</default>
+        <label>Clothing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gifts</fullName>
+        <default>false</default>
+        <label>Gifts</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Travel</fullName>
+        <default>false</default>
+        <label>Travel</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Gas</fullName>
+        <default>false</default>
+        <label>Gas</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mortgage</fullName>
+        <default>false</default>
+        <label>Mortgage</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscriptions</fullName>
+        <default>false</default>
+        <label>Subscriptions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Miscellaneous</fullName>
+        <default>false</default>
+        <label>Miscellaneous</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Personal Care</fullName>
+        <default>false</default>
+        <label>Personal Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Shopping</fullName>
+        <default>false</default>
+        <label>Shopping</label>
+    </standardValue>
+</StandardValueSet>
