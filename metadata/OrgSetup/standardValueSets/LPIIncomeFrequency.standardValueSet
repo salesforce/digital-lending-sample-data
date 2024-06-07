@@ -2,18 +2,18 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Medical Prescriptions and Expenses</fullName>
+        <fullName>Weekly</fullName>
         <default>false</default>
-        <label>Medical Prescriptions and Expenses</label>
+        <label>Weekly</label>
     </standardValue>
     <standardValue>
-        <fullName>Utilities</fullName>
+        <fullName>Monthly</fullName>
         <default>false</default>
-        <label>Utilities</label>
+        <label>Monthly</label>
     </standardValue>
     <standardValue>
-        <fullName>Housing</fullName>
+        <fullName>Yearly</fullName>
         <default>false</default>
-        <label>Housing</label>
+        <label>Yearly</label>
     </standardValue>
 </StandardValueSet>

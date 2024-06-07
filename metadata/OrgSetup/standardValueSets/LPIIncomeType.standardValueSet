@@ -2,18 +2,18 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Medical Prescriptions and Expenses</fullName>
+        <fullName>Salary</fullName>
         <default>false</default>
-        <label>Medical Prescriptions and Expenses</label>
+        <label>Salary</label>
     </standardValue>
     <standardValue>
-        <fullName>Utilities</fullName>
+        <fullName>Commission</fullName>
         <default>false</default>
-        <label>Utilities</label>
+        <label>Commission</label>
     </standardValue>
     <standardValue>
-        <fullName>Housing</fullName>
+        <fullName>Bonus</fullName>
         <default>false</default>
-        <label>Housing</label>
+        <label>Bonus</label>
     </standardValue>
 </StandardValueSet>
