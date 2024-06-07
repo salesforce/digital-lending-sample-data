@@ -201,11 +201,7 @@ Creates decision tables used for pricing.
 6. Save
 </details>
 
-4. Update decision tables ProductListRateDT, TermBasedAdjustmentDT and CreditScoreBasedAdjustment status to Active
-
-5. Update LookUpId for above 3 decision tables in expression set file AppFormProductProposalProc.expressionSetDefinition
-
-6. Run `sf project deploy start --metadata-dir metadata/PricingExpressionSet -o YourOrgAlias`
+4. Run `sf project deploy start --metadata-dir metadata/PricingExpressionSet -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates expression set definition used for pricing.

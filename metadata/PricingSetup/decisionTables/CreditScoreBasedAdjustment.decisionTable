@@ -49,7 +49,6 @@
     <filterResultBy>OutputOrder</filterResultBy>
     <setupName>CreditScoreBasedAdjustment</setupName>
     <sourceObject>RateAdjustmentByCreditScore__c</sourceObject>
-    <status>Inactive</status>
-    <type>LowVolume</type>
+    <status>Active</status>
     <usageType>DefaultPricing</usageType>
 </DecisionTable>
