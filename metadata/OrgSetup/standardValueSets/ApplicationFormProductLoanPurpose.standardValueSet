@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Home Improvement</fullName>
+        <default>false</default>
+        <label>Home Improvement</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Auto Loan Payment</fullName>
+        <default>false</default>
+        <label>Auto Loan Payment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Personal Loan</fullName>
+        <default>false</default>
+        <label>Personal Loan</label>
+    </standardValue>
+</StandardValueSet>

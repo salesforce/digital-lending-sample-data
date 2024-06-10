@@ -40,6 +40,14 @@ Creates a custom field City on ProductQualification object.
 Enables Context Definition, Salesforce Pricing and Industries KYC in the org.
 
 Creates Sample Financial Services For Customer Community Plus Login Clone permission set
+
+Adds picklist values for 
+- Salutation field on Applicant
+- Loan Purpose field on ApplicationFormProduct
+- Status field on Contract
+- IncomeFrequency and IncomeType fields on PartyIncome
+- Type and RecurrenceInterval fields on PartyExpense
+- Nationality field on PartyProfile 
 </details>
 
 5. Run `sf project deploy start --metadata-dir metadata/Profiles -o YourOrgAlias`

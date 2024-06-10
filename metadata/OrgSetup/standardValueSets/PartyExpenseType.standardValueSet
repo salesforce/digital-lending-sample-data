@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Medical Prescriptions and Expenses</fullName>
+        <default>false</default>
+        <label>Medical Prescriptions and Expenses</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Utilities</fullName>
+        <default>false</default>
+        <label>Utilities</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Housing</fullName>
+        <default>false</default>
+        <label>Housing</label>
+    </standardValue>
+</StandardValueSet>
