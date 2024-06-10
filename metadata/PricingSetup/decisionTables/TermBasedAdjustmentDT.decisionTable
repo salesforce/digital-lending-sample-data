@@ -40,7 +40,6 @@
     <filterResultBy>OutputOrder</filterResultBy>
     <setupName>TermBasedAdjustmentDT</setupName>
     <sourceObject>RateAdjustmentByTerm__c</sourceObject>
-    <status>Inactive</status>
-    <type>LowVolume</type>
+    <status>Active</status>
     <usageType>DefaultPricing</usageType>
 </DecisionTable>

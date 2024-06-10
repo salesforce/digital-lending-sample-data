@@ -24,7 +24,6 @@
     <filterResultBy>OutputOrder</filterResultBy>
     <setupName>ProductListRateDT</setupName>
     <sourceObject>ProductListRate</sourceObject>
-    <status>Inactive</status>
-    <type>LowVolume</type>
+    <status>Active</status>
     <usageType>DefaultPricing</usageType>
 </DecisionTable>
