@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ParticipantRole xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultAccessLevel>None</defaultAccessLevel>
+    <isActive>true</isActive>
+    <masterLabel>PartyProfileNoAccess</masterLabel>
+    <parentObject>PartyProfile</parentObject>
+</ParticipantRole>
