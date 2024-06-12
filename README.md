@@ -216,3 +216,18 @@ Creates expression set definition used for pricing.
 <summary>Command Details</summary>
 Creates Application Form Participant Role With Read/Write access level
 </details>
+
+### Stage Management for Digital Lending 
+
+1. Run `sf project deploy start --metadata-dir metadata/StageManagement -o YourOrgAlias`
+
+<details>
+<summary>Command Details</summary>
+Adds Apex files, Decision Matrix Definition, Flow, and Participant Roles. CDSCacheHelper helps cache SOQL results. CDSUtil will be run as a stage transition step. When an Application Form Product's Stage field changes, the Visible Status field will change based on the decision matrix values. Additionally, the associated Application Form's Stage field will also change based on the decision matrix values. Afterwards, Participant records will be created on the Application Form Product, the associated Application Form record, and the associated Party Profile record based on the decision matrix values. Creates Decision Matrix definitions for the org. Creates Participant roles for access levels on Application Form Product, Application Form, and Party Profile entities. Creates an Autolaunched Flow to invoke the CDSUtil Apex file.
+</details>
+
+2. Run `sf apex run --file apex/StageManagement.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Adds rows to the Decision Matrices: AFPStage_To_AFStage, AFPStage_To_ApplicantVisibleStatus, AFPStage_To_CDS_Access
+</details>
