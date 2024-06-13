@@ -26,7 +26,7 @@ String PREFIX = 'Sample';
 PermissionSet dlps = [SELECT Fields(Standard) FROM PermissionSet WHERE Name = 'DigitalLending'].clone();
 dlps.Id = null;
 dlps.Name = PREFIX + 'DigitalLendingClone';
-dlps.Label = PREFIX + ' Financial Services Cloud Digital Lending Clone';
+dlps.Label = PREFIX + ' Digital Lending Clone';
 dlps.PermissionsDigitalLendingAdminUser = true;
 dlps.PermissionsConfigCompliantDataSharing = true;
 insert dlps;

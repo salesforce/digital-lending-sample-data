@@ -48,6 +48,8 @@ Adds picklist values for
 - IncomeFrequency and IncomeType fields on PartyIncome
 - Type and RecurrenceInterval fields on PartyExpense
 - Nationality field on PartyProfile 
+
+If you have existing active picklist values in your org for above picklists then you could add those to the standard value set to keep them active
 </details>
 
 5. Run `sf project deploy start --metadata-dir metadata/Profiles -o YourOrgAlias`
