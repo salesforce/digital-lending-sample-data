@@ -48,6 +48,7 @@ Adds picklist values for
 - IncomeFrequency and IncomeType fields on PartyIncome
 - Type and RecurrenceInterval fields on PartyExpense
 - Nationality field on PartyProfile 
+- Type field on Party Financial Asset
 
 If you have existing active picklist values in your org for above picklists then you could add those to the standard value set to keep them active
 </details>
