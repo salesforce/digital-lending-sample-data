@@ -194,21 +194,33 @@ Adds records in the custom objects for Pricing.
 Creates decision tables used for pricing.
 </details>
 
-3. Update Lookup Table's Component Type
+3. Modify Price Adjustment Matrices using below steps
 <details>
-<summary>Steps</summary>
+<summary>Steps to modify Price Adjustment Matrices</summary>
 
-1. Go to Setup > Pricing Recipes > NGPDefaultRecipe > Click Modify 
+1. Go to Setup > Pricing Recipes > NGPDefaultRecipe > Select Price Adjustment Matrix tab > Click Modify 
 
 2. Update CreditScoreBasedAdjustment's Variable Mapping to TierValue__c for AdjustmentValue and TierType__c for AdjustmentType
 
-3. Update ProductListRateDT's Pricing Component Type to List Price and update the Variable Mapping to List Rate for UnitPrice
+3. Select CreditScoreBasedAdjustment by clicking on the + button
 
-4. Update TermBasedAdjustmentDT's Variable Mapping to TierValue__c for AdjustmentValue and TierType__c for AdjustmentType
+4. Click Save
 
-5. Select CreditScoreBasedAdjustment, ProductListRateDT and TermBasedAdjustmentDT by clicking on the + button
+5. Click Modify
 
-6. Save
+6. Update ProductListRateDT's Pricing Component Type to List Price and update the Variable Mapping to List Rate for UnitPrice
+
+7. Select ProductListRateDT by clicking on the + button
+
+8. Click Save
+
+9. Click Modify
+
+10. Update TermBasedAdjustmentDT's Variable Mapping to TierValue__c for AdjustmentValue and TierType__c for AdjustmentType
+
+11. Select TermBasedAdjustmentDT by clicking on the + button
+
+12. Click Save
 </details>
 
 4. Run `sf project deploy start --metadata-dir metadata/PricingExpressionSet -o YourOrgAlias`
