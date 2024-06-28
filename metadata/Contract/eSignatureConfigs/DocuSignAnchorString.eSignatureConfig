@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ESignatureConfig xmlns="http://soap.sforce.com/2006/04/metadata">
-    <configType>AnchorString</configType>
-    <configValue>signHereTabs:sfSignHere,dateSignedTabs:sfSignDate,initialHereTabs:sfInitialHere</configValue>
-    <groupType>AnchorTabSetting</groupType>
-    <masterLabel>DocuSignAnchorString</masterLabel>
-    <vendor>DocuSign</vendor>
-</ESignatureConfig>

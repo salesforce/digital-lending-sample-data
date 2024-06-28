@@ -62,13 +62,6 @@
                 </parameters>
                 <parameters>
                     <input>true</input>
-                    <name>IsContractEnabled</name>
-                    <output>false</output>
-                    <type>Literal</type>
-                    <value>false</value>
-                </parameters>
-                <parameters>
-                    <input>true</input>
                     <name>sectionCount</name>
                     <output>false</output>
                     <type>Literal</type>
@@ -174,13 +167,6 @@
                 </parameters>
                 <parameters>
                     <input>true</input>
-                    <name>IsContractEnabled</name>
-                    <output>false</output>
-                    <type>Literal</type>
-                    <value>false</value>
-                </parameters>
-                <parameters>
-                    <input>true</input>
                     <name>sectionCount</name>
                     <output>false</output>
                     <type>Literal</type>
@@ -276,13 +262,6 @@
                     <output>false</output>
                     <type>Literal</type>
                     <value>TermBasedAdjustmentDT</value>
-                </parameters>
-                <parameters>
-                    <input>true</input>
-                    <name>IsContractEnabled</name>
-                    <output>false</output>
-                    <type>Literal</type>
-                    <value>false</value>
                 </parameters>
                 <parameters>
                     <input>true</input>

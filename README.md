@@ -4,6 +4,7 @@ This repository contains sample data for Industries Digital Lending.
 
 Digital Lending feature setup has several steps. This repo automates many of these setup steps and will also setup sample data (i.e. products etc.)
 
+
 ## Usage
 
 ### Prerequisites and Guidelines
@@ -27,11 +28,9 @@ Creates a custom permission set SampleDigitalLendingClone.
 Assigns this and several other permission sets to the user.
 </details>
 
-2. Navigate to `Contract Lifecycle Management`'s `General Settings` from Setup (`Feature Settings` &rarr; `Contract Lifecycle Management` &rarr; `General Settings`), and enable `Salesforce Contracts`.
+1. Navigate to `Document Generation`'s `General Settings` from Setup (`Feature Settings` &rarr; `Document Generation` &rarr; `General Settings`), and enable `Design Document Templates in Salesforce`.
 
-3. Navigate to `Document Generation`'s `General Settings` from Setup (`Feature Settings` &rarr; `Document Generation` &rarr; `General Settings`), and enable `Design Document Templates in Salesforce`.
-
-4. Run `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
+1. Run `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 
@@ -44,7 +43,6 @@ Creates Sample Financial Services For Customer Community Plus Login Clone permis
 Adds picklist values for 
 - Salutation field on Applicant
 - Loan Purpose field on ApplicationFormProduct
-- Status field on Contract
 - IncomeFrequency and IncomeType fields on PartyIncome
 - Type and RecurrenceInterval fields on PartyExpense
 - Nationality field on PartyProfile 
@@ -67,7 +65,7 @@ Updated Sharing Settings to expose objects to community users
 
 7. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
 
-In the above steps, new custom field `City__c` has been created on `ProductQualification` object and `SourceApplicationFormProduct__c` has been created on `Contract` object, 
+In the above steps, new custom field `City__c` has been created on `ProductQualification` object, 
 `Product__c`, `LowerBound__c`, `UpperBound__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByCreditScore__c` and `Product__c`, `Term__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByTerm__c`. 
 We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want these fields to be visible from Setup.
 
@@ -147,38 +145,6 @@ Creates a Decision Matrix for Straight Through Processing.
 Adds rows to the Decision Matrix for Straight Through Processing.
 
 Activates Decision Matrix for Straight Through Processing.
-</details>
-
-### Contracts
-
-1. In the files `SampleDigitalLendingActivateSignedContractClone.flow`, `SampleDigitalLendingGenerateOrUpdateContractClone.flow`, `SampleDigitalLendingUpdateDocumentGenerationClone.flow` in the folder `metadata/Contract/flows/` replace `system_admin_email` with system admin's email.
-
-2. Sign up for a DocuSign Developer edition account and create an application as mentioned in steps 1-3 here https://help.salesforce.com/s/articleView?id=ind.sf_contracts_Create_an_Auth_Provider_for_DocuSign.htm&type=5
-
-3. Replace the `consumerKey` and `consumerSecret` in the file `DocuSign.authprovider` with the DocuSign App's Integration Key and DocuSign App's Secret Key from your Docusign account. Replace `configValue` in `DocuSigneSignVendorAccountId.eSignatureConfig` with the API AccountId from DocuSign account. Replace `vendorAccountIdentifier` in `DocuSign_Contract.eSignatureEnvelopeConfig` with the API AccountId from DocuSign account.
-
-4. Run `sf project deploy start --metadata-dir metadata/Contract -o YourOrgAlias`
-<details>
-<summary>Command Details</summary>
-Adds apex classes, decision matrix, document templates, flows, data raptors used for contract generation.
-
-Sets various settings: contract types, document generation settings, object hierarchy relationship, and file upload and download security settings which are required for contract generation.
-
-Creates Email Template, Auth Provider, Named Credential, ESignatureConfig, RemoteSiteSetting and ESignatureEnvelopeConfig for Electronic Signature.
-</details>
-
-5. Do the steps 12 to 15 as mentioned here https://help.salesforce.com/s/articleView?id=ind.sf_contracts_Create_an_Auth_Provider_for_DocuSign.htm&type=5
-
-6. Edit Named Credential called `DocuSignAuthProvider` created in your org as part of previous step to trigger authentication with DocuSign.
-
-7. Run `sf apex run --file apex/Contract.apex -o YourOrgAlias`
-<details>
-<summary>Command Details</summary>
-Activates document templates.
-
-Adds rows to the Decision Matrix for Contract Generation.
-
-Creates Object State Transition for Electronic Signature.
 </details>
 
 ### Pricing
