@@ -28,9 +28,7 @@ Creates a custom permission set SampleDigitalLendingClone.
 Assigns this and several other permission sets to the user.
 </details>
 
-2. Navigate to `Document Generation`'s `General Settings` from Setup (`Feature Settings` &rarr; `Document Generation` &rarr; `General Settings`), and enable `Design Document Templates in Salesforce`.
-
-3. Run `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
+2. Run `sf project deploy start --metadata-dir metadata/OrgSetup -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 
@@ -51,7 +49,7 @@ Adds picklist values for
 If you have existing active picklist values in your org for above picklists then you could add those to the standard value set to keep them active
 </details>
 
-4. Run `sf project deploy start --metadata-dir metadata/Profiles -o YourOrgAlias`
+3. Run `sf project deploy start --metadata-dir metadata/Profiles -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates a custom profile called Sample Customer Community Plus Login User Clone, adds object permissions and user permissions for community user
@@ -61,9 +59,9 @@ Assigns fieldpermissions to Admin and Sample Customer Community Plus Login User 
 Updated Sharing Settings to expose objects to community users
 </details>
 
-5. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
+4. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
 
-6. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
+5. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
 
 In the above steps, new custom field `City__c` has been created on `ProductQualification` object, 
 `Product__c`, `LowerBound__c`, `UpperBound__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByCreditScore__c` and `Product__c`, `Term__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByTerm__c`. 
