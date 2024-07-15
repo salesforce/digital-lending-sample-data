@@ -231,3 +231,9 @@ Adds Apex files, Decision Matrix Definition, Flow, and Participant Roles. CDSCac
 <summary>Command Details</summary>
 Adds rows to the Decision Matrices: AFPStage_To_AFStage, AFPStage_To_ApplicantVisibleStatus, AFPStage_To_CDS_Access
 </details>
+
+3. Run `sf project deploy start --metadata-dir metadata/StageDefinition -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates the Stage Definition for Digital Lending
+</details>
