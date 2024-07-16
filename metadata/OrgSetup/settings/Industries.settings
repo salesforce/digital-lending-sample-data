@@ -8,4 +8,5 @@
     <enableCdsAppFormProdSiteUsers>true</enableCdsAppFormProdSiteUsers>
     <enableCdsPartyProfile>true</enableCdsPartyProfile>
     <enableCdsPartyProfileSiteUsers>true</enableCdsPartyProfileSiteUsers>
+    <enableIndustriesStageManagementPref>true</enableIndustriesStageManagementPref>
 </IndustriesSettings>
