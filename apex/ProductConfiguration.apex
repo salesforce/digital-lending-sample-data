@@ -80,11 +80,23 @@ insert omniscriptName;
 
 System.debug(omniscriptName);
 
-AttributePicklist attributePicklistLoanTerm =
-    new AttributePicklist(Name = 'LoanTerm', Description='LoanTerm', Code = '1',  DataType='Text', Status = 'Active');
+AttributePicklist attributePicklistLoanTerm;
 
-insert attributePicklistLoanTerm;
+Schema.DescribeSObjectResult describeResult = Schema.getGlobalDescribe().get('AttributePicklist').getDescribe();
+Map<String, Schema.SObjectField> fieldsMap = describeResult.fields.getMap();
+// FieldService perm is auto enabled in Developer Org which makes Code field visible and mandatory
+if (fieldsMap.containsKey('Code')) {
+    attributePicklistLoanTerm =
+        new AttributePicklist(Name = 'LoanTerm', Description='LoanTerm', Code = '1', DataType='Text', Status = 'Active');
 
+	insert attributePicklistLoanTerm;
+}
+else {
+    attributePicklistLoanTerm =
+        new AttributePicklist(Name = 'LoanTerm', Description='LoanTerm', DataType='Text', Status = 'Active');
+
+	insert attributePicklistLoanTerm;
+}
 System.debug(attributePicklistLoanTerm);
 
 
