@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DecisionMatrixDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>AFPStage_To_ApplicantVisibleStatus</label>
+    <processType>Bre</processType>
+    <type>Standard</type>
+    <versions>
+        <fullName>AFPStage_To_ApplicantVisibleStatus_V1</fullName>
+        <columns>
+            <columnType>Input</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>1</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>ApplicationFormProductStage</name>
+        </columns>
+        <columns>
+            <columnType>Output</columnType>
+            <dataType>Text</dataType>
+            <displaySequence>2</displaySequence>
+            <isWildcardColumn>false</isWildcardColumn>
+            <name>ApplicantVisibleStatus</name>
+        </columns>
+        <decisionMatrixDefinition>AFPStage_To_ApplicantVisibleStatus</decisionMatrixDefinition>
+        <label>AFPStage_To_ApplicantVisibleStatus V1</label>
+        <startDate>2024-03-22T00:38:18.000Z</startDate>
+        <status>Active</status>
+        <versionNumber>1</versionNumber>
+    </versions>
+</DecisionMatrixDefinition>

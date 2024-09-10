@@ -61,9 +61,7 @@ Updated Sharing Settings to expose objects to community users
 
 4. Navigate to `Product Discovery Settings` from Setup (`Feature Settings` &rarr; `Product Discovery` &rarr; `Product Discovery Settings`), and enable `Qualification Procedure`.
 
-5. Navigate to `Digital Lending` from Setup (`Feature Settings` &rarr; `Lending` &rarr; `Digital Lending`), and enable `Digital Lending`.
-
-In the above steps, new custom field `City__c` has been created on `ProductQualification` object, 
+In the above steps, new custom field `City__c` has been created on `ProductQualification` object and `SourceApplicationFormProduct__c` has been created on `Contract` object, 
 `Product__c`, `LowerBound__c`, `UpperBound__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByCreditScore__c` and `Product__c`, `Term__c`, `TierValue__c`, `TierType__c` has been created on `RateAdjustmentByTerm__c`. 
 We also assigned field permissions for two profiles. Assign field permissions to any other profiles you want these fields to be visible from Setup.
 
@@ -196,10 +194,29 @@ Creates expression set definition used for pricing.
 
 ### Participant role for Compliant Data Sharing 
 
-1. Navigate to `Compliant Data Sharing`'s `Object Enablement Settings` from Setup and enable `Compliant Data Sharing for CRM Users` for `Application Form` Object.
-
-2. Run `sf project deploy start --metadata-dir metadata/CompliantDataSharing -o YourOrgAlias`
+1. Run `sf project deploy start --metadata-dir metadata/CompliantDataSharing -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates Application Form Participant Role With Read/Write access level
+</details>
+
+### Stage Management for Digital Lending 
+
+1. Run `sf project deploy start --metadata-dir metadata/StageManagement -o YourOrgAlias`
+
+<details>
+<summary>Command Details</summary>
+Adds Apex files, Decision Matrix Definition, Flow, and Participant Roles. CDSCacheHelper helps cache SOQL results. CDSUtil will be run as a stage transition step. When an Application Form Product's Stage field changes, the Visible Status field will change based on the decision matrix values. Additionally, the associated Application Form's Stage field will also change based on the decision matrix values. Afterwards, Participant records will be created on the Application Form Product, the associated Application Form record, and the associated Party Profile record based on the decision matrix values. Creates Decision Matrix definitions for the org. Creates Participant roles for access levels on Application Form Product, Application Form, and Party Profile entities. Creates an Autolaunched Flow to invoke the CDSUtil Apex file.
+</details>
+
+2. Run `sf apex run --file apex/StageManagement.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Adds rows to the Decision Matrices: AFPStage_To_AFStage, AFPStage_To_ApplicantVisibleStatus, AFPStage_To_CDS_Access
+</details>
+
+3. Run `sf project deploy start --metadata-dir metadata/StageDefinition -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates the Stage Definition for Digital Lending
 </details>
