@@ -189,7 +189,7 @@ Creates decision tables used for pricing.
 4. Run `sf project deploy start --metadata-dir metadata/PricingExpressionSet -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-Creates expression set definition used for pricing.
+Creates expression set definitions used for pricing.
 </details>
 
 ### Participant role for Compliant Data Sharing 
