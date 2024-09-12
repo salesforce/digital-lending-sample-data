@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StageDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <masterLabel>Digital Lending Stage</masterLabel>
+    <referenceObject>ApplicationFormProduct</referenceObject>
+    <referenceObjectField>Stage</referenceObjectField>
+    <stageTransition>
+        <fromStageValue>Intake</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Intake-Submitted</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital_Lending_Stage_Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Submitted</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Intake</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Intake-Auto Approved</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital_Lending_Stage_Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Auto Approved</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Submitted</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Submitted-In Review</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>In Review</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Submitted</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Submitted-Need More Info</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Need More Info</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Submitted</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Submitted-Auto Approved</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Auto Approved</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Submitted</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Submitted-Auto Rejected</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Auto Rejected</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>In Review</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: In Review-Underwriter Approved</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Underwriter Approved</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>In Review</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: In Review-Underwriter Rejected</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Underwriter Rejected</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Underwriter Approved</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Underwriter Approved-Customer Approved</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Customer Approved</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Underwriter Approved</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Underwriter Approved-Customer Rejected</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Customer Rejected</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Customer Approved</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Customer Approved-Contract Generation</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Contract Generation</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Auto Approved</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Auto Approved-Contract Generation</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Contract Generation</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Auto Approved</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Auto Approved-Customer Rejected</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Customer Rejected</toStageValue>
+    </stageTransition>
+    <stageTransition>
+        <fromStageValue>Contract Generation</fromStageValue>
+        <stepGroup>
+            <name>StgStepDefinitionGroup: Contract Generation-Signature Complete</name>
+            <step>
+                <apiName>Execute_Flow</apiName>
+                <flowDefinitionName>Digital Lending Stage Management</flowDefinitionName>
+                <name>Execute Flow</name>
+                <runAsUser>005SG0000070iEkYAI</runAsUser>
+                <stepType>AutoTask</stepType>
+            </step>
+        </stepGroup>
+        <toStageValue>Signature Complete</toStageValue>
+    </stageTransition>
+    <stageValue>
+        <value>Intake</value>
+    </stageValue>
+    <stageValue>
+        <value>Submitted</value>
+    </stageValue>
+    <stageValue>
+        <value>Auto Approved</value>
+    </stageValue>
+    <stageValue>
+        <value>Underwriter Approved</value>
+    </stageValue>
+    <stageValue>
+        <value>In Review</value>
+    </stageValue>
+    <stageValue>
+        <value>Need More Info</value>
+    </stageValue>
+    <stageValue>
+        <value>Auto Rejected</value>
+    </stageValue>
+    <stageValue>
+        <value>Underwriter Rejected</value>
+    </stageValue>
+    <stageValue>
+        <value>Customer Approved</value>
+    </stageValue>
+    <stageValue>
+        <value>Customer Rejected</value>
+    </stageValue>
+    <stageValue>
+        <value>Contract Generation</value>
+    </stageValue>
+    <stageValue>
+        <value>Signature Complete</value>
+    </stageValue>
+</StageDefinition>

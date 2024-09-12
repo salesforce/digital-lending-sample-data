@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <IndustriesSettings xmlns="http://soap.sforce.com/2006/04/metadata">
     <enableIndustriesKYC>true</enableIndustriesKYC>
+    <enableDigitalLendingPref>true</enableDigitalLendingPref>
+    <enableCdsApplicationForm>true</enableCdsApplicationForm>
+    <enableCdsAppFormSiteUsers>true</enableCdsAppFormSiteUsers>
+    <enableCdsApplicationFormProduct>true</enableCdsApplicationFormProduct>
+    <enableCdsAppFormProdSiteUsers>true</enableCdsAppFormProdSiteUsers>
+    <enableCdsPartyProfile>true</enableCdsPartyProfile>
+    <enableCdsPartyProfileSiteUsers>true</enableCdsPartyProfileSiteUsers>
+    <enableIndustriesStageManagementPref>true</enableIndustriesStageManagementPref>
 </IndustriesSettings>
