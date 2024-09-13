@@ -137,32 +137,58 @@ AttributeDefinition offerValidPeriod =
 insert offerValidPeriod;
 System.debug(offerValidPeriod);
 
+AttributeDefinition loanAmount =
+    new AttributeDefinition(Name = 'loanAmount', DataType='Currency', Description='LoanAmount', Label= 'LoanAmount', isActive=True);
+
+insert loanAmount;
+
+System.debug(loanAmount);
+
+AttributeDefinition creditScore =
+    new AttributeDefinition(Name = 'creditScore', DataType='Number', Description='CreditScore', Label= 'CreditScore', isActive=True);
+
+insert creditScore;
+
+System.debug(creditScore);
+
 ProductClassificationAttr productClassificationAttr =
-    new ProductClassificationAttr(Name = 'MaxLoanAmount', AttributeDefinitionId = maxLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'MaxLoanAmount', AttributeDefinitionId = maxLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = false, isHidden = true);
 
 insert productClassificationAttr;
 System.debug(productClassificationAttr);
 
 productClassificationAttr =
-    new ProductClassificationAttr(Name = 'MinLoanAmount', AttributeDefinitionId = minLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'MinLoanAmount', AttributeDefinitionId = minLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = false, isHidden = true);
 
 insert productClassificationAttr;
 System.debug(productClassificationAttr);
 
 productClassificationAttr =
-    new ProductClassificationAttr(Name = 'OmniscriptName', AttributeDefinitionId = omniscriptName.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'OmniscriptName', AttributeDefinitionId = omniscriptName.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = false, isHidden = true);
 
 insert productClassificationAttr;
 System.debug(productClassificationAttr);
 
 productClassificationAttr =
-    new ProductClassificationAttr(Name = 'LoanTerm', AttributeDefinitionId = loanTerm.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'LoanTerm', AttributeDefinitionId = loanTerm.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = true);
 
 insert productClassificationAttr;
 System.debug(productClassificationAttr);
 
 productClassificationAttr =
-    new ProductClassificationAttr(Name = 'OfferValidPeriod', AttributeDefinitionId = offerValidPeriod.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'OfferValidPeriod', AttributeDefinitionId = offerValidPeriod.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = false, isHidden = true);
+
+insert productClassificationAttr;
+System.debug(productClassificationAttr);
+
+productClassificationAttr =
+    new ProductClassificationAttr(Name = 'LoanAmount', AttributeDefinitionId = loanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = true);
+
+insert productClassificationAttr;
+System.debug(productClassificationAttr);
+
+productClassificationAttr =
+    new ProductClassificationAttr(Name = 'CreditScore', AttributeDefinitionId = creditScore.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = true, isHidden = true);
 
 insert productClassificationAttr;
 System.debug(productClassificationAttr);
