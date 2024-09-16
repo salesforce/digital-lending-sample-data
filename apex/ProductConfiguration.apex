@@ -28,7 +28,7 @@ ProductCatalog sample_catalog =
                              Description = SAMPLE_PREFIX+'catalog');
 insert sample_catalog;
 
-System.debug(sample_catalog);
+System.debug('Created product catalog: ' + sample_catalog);
 
 ProductCategory sample_category =
     new ProductCategory(Name= SAMPLE_PREFIX+'category',
@@ -36,7 +36,7 @@ ProductCategory sample_category =
 
 insert sample_category;
 
-System.debug(sample_category);
+System.debug('Created product category: ' + sample_category);
 
 ProductClassification productClassification =
     new ProductClassification(Code = SAMPLE_PREFIX+'product_classification', Name=SAMPLE_PREFIX+'product_classification', status='Active');
@@ -50,35 +50,35 @@ Product2 sample_product_auto_loan =
 
 insert sample_product_auto_loan;
 
-System.debug(sample_product_auto_loan);
+System.debug('Created product: ' + sample_product_auto_loan);
 
 ProductCategoryProduct sample_productCategoryProduct =
     new ProductCategoryProduct(
                             ProductCategoryId = sample_category.ID, ProductId = sample_product_auto_loan.ID);
 
 insert sample_productCategoryProduct;
-System.debug(sample_productCategoryProduct);
+System.debug('Created product category product: ' + sample_productCategoryProduct);
 
 AttributeDefinition maxLoanAmount =
     new AttributeDefinition(Name = 'MaxLoanAmount', DataType='Number', DefaultValue='1000000', Description='MaxLoanAmount', Label= 'MaxLoanAmount', isActive=True);
 
 insert maxLoanAmount;
 
-System.debug(maxLoanAmount);
+System.debug('Created attribute definition maxLoanAmount: ' + maxLoanAmount);
 
 AttributeDefinition minLoanAmount =
     new AttributeDefinition(Name = 'MinLoanAmount', DataType='Number', DefaultValue='1000', Description='MinLoanAmount', Label= 'MinLoanAmount', isActive=True);
 
 insert minLoanAmount;
 
-System.debug(minLoanAmount);
+System.debug('Created attribute definition minLoanAmount: ' + minLoanAmount);
 
 AttributeDefinition omniscriptName =
     new AttributeDefinition(Name = 'OmniscriptName', DataType='Text', DefaultValue='ApplicantIntakeSecured', Description='OmniscriptName', Label= 'OmniscriptName', isActive=True);
 
 insert omniscriptName;
 
-System.debug(omniscriptName);
+System.debug('Created attribute definition omniscriptName: ' + omniscriptName);
 
 AttributePicklist attributePicklistLoanTerm =
         new AttributePicklist();
@@ -99,7 +99,7 @@ for (String fieldName : fieldValues.keySet()) {
 }
 insert attributePicklistLoanTerm;
 
-System.debug(attributePicklistLoanTerm);
+System.debug('Created attribute picklist loanTerm: ' + attributePicklistLoanTerm);
 
 
 AttributePicklistValue loanTerm_12Months =
@@ -107,65 +107,91 @@ AttributePicklistValue loanTerm_12Months =
 
 insert loanTerm_12Months;
 
-System.debug(loanTerm_12Months);
+System.debug('Created attribute picklist value loanTerm_12Months: ' + loanTerm_12Months);
 
 AttributePicklistValue loanTerm_24Months =
     new AttributePicklistValue(Name = '24 Months',Code = '24', Value= '24', Status= 'Active', Sequence = 2, PicklistId= attributePicklistLoanTerm.ID);
 
 insert loanTerm_24Months;
 
-System.debug(loanTerm_24Months);
+System.debug('Created attribute picklist value loanTerm_24Months: ' + loanTerm_24Months);
 
 AttributePicklistValue loanTerm_36Months =
     new AttributePicklistValue(Name = '36 Months',Code = '36', Value= '36', Status= 'Active', Sequence = 3, PicklistId= attributePicklistLoanTerm.ID);
 
 insert loanTerm_36Months;
 
-System.debug(loanTerm_36Months);
+System.debug('Created attribute picklist value loanTerm_36Months: ' + loanTerm_36Months);
 
 AttributeDefinition loanTerm =
     new AttributeDefinition(Name = 'LoanTerm', DataType='Picklist', Description='LoanTerm', Label= 'LoanTerm', isActive=True, PicklistId= attributePicklistLoanTerm.ID);
 
 insert loanTerm;
 
-System.debug(loanTerm);
+System.debug('Created attribute definition loanTerm: ' + loanTerm);
 
 
 AttributeDefinition offerValidPeriod =
     new AttributeDefinition(Name = 'OfferValidPeriod', DataType = 'Number', Label= 'OfferValidPeriod', Description='OfferValidPeriod', isActive=True, DefaultValue='30');
 
 insert offerValidPeriod;
-System.debug(offerValidPeriod);
+System.debug('Created attribute definition offerValidPeriod: ' + offerValidPeriod);
+
+AttributeDefinition loanAmount =
+    new AttributeDefinition(Name = 'loanAmount', DataType='Currency', Description='LoanAmount', Label= 'LoanAmount', isActive=True);
+
+insert loanAmount;
+
+System.debug('Created attribute definition loanAmount: ' + loanAmount);
+
+AttributeDefinition creditScore =
+    new AttributeDefinition(Name = 'creditScore', DataType='Number', Description='CreditScore', Label= 'CreditScore', isActive=True);
+
+insert creditScore;
+
+System.debug('Created attribute definition creditScore: ' + creditScore);
 
 ProductClassificationAttr productClassificationAttr =
-    new ProductClassificationAttr(Name = 'MaxLoanAmount', AttributeDefinitionId = maxLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'MaxLoanAmount', AttributeDefinitionId = maxLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = false, isHidden = true);
 
 insert productClassificationAttr;
-System.debug(productClassificationAttr);
+System.debug('Created product classification attribute MaxLoanAmount: ' + productClassificationAttr);
 
 productClassificationAttr =
-    new ProductClassificationAttr(Name = 'MinLoanAmount', AttributeDefinitionId = minLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'MinLoanAmount', AttributeDefinitionId = minLoanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = false, isHidden = true);
 
 insert productClassificationAttr;
-System.debug(productClassificationAttr);
+System.debug('Created product classification attribute MinLoanAmount: ' + productClassificationAttr);
 
 productClassificationAttr =
-    new ProductClassificationAttr(Name = 'OmniscriptName', AttributeDefinitionId = omniscriptName.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'OmniscriptName', AttributeDefinitionId = omniscriptName.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = false, isHidden = true);
 
 insert productClassificationAttr;
-System.debug(productClassificationAttr);
+System.debug('Created product classification attribute OmniscriptName: ' + productClassificationAttr);
 
 productClassificationAttr =
-    new ProductClassificationAttr(Name = 'LoanTerm', AttributeDefinitionId = loanTerm.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'LoanTerm', AttributeDefinitionId = loanTerm.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = true);
 
 insert productClassificationAttr;
-System.debug(productClassificationAttr);
+System.debug('Created product classification attribute LoanTerm: ' + productClassificationAttr);
 
 productClassificationAttr =
-    new ProductClassificationAttr(Name = 'OfferValidPeriod', AttributeDefinitionId = offerValidPeriod.ID, Status= 'Active', ProductClassificationId=productClassification.ID);
+    new ProductClassificationAttr(Name = 'OfferValidPeriod', AttributeDefinitionId = offerValidPeriod.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = false, isHidden = true);
 
 insert productClassificationAttr;
-System.debug(productClassificationAttr);
+System.debug('Created product classification attribute OfferValidPeriod: ' + productClassificationAttr);
+
+productClassificationAttr =
+    new ProductClassificationAttr(Name = 'LoanAmount', AttributeDefinitionId = loanAmount.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = true);
+
+insert productClassificationAttr;
+System.debug('Created product classification attribute LoanAmount: ' + productClassificationAttr);
+
+productClassificationAttr =
+    new ProductClassificationAttr(Name = 'CreditScore', AttributeDefinitionId = creditScore.ID, Status= 'Active', ProductClassificationId=productClassification.ID, isPriceImpacting = true, isHidden = true);
+
+insert productClassificationAttr;
+System.debug('Created product classification attribute CreditScore: ' + productClassificationAttr);
 
 System.debug('Creating product qualification ...');
 
@@ -181,9 +207,9 @@ insert autoLoanQualification;
 
 ProductFee productFee = new ProductFee(Amount = 1000, ProductId = sample_product_auto_loan.Id, Type = 'OriginationFee', ValidStartDate = Date.newInstance(1960, 2, 17), ValidEndDate = Date.newInstance(2029, 2, 17));
 insert productFee;
-System.debug(productFee);
+System.debug('Created product fee: ' + productFee);
 
 ProductListRate productListRate = new ProductListRate(ProductId = sample_product_auto_loan.Id, ListRate = 5, ValidStartDate = Date.newInstance(1960, 2, 17), ValidEndDate = Date.newInstance(2029, 2, 17));
 insert productListRate;
-System.debug(productListRate);
+System.debug('Created product list rate: ' + productListRate);
 
