@@ -138,14 +138,14 @@ insert offerValidPeriod;
 System.debug('Created attribute definition offerValidPeriod: ' + offerValidPeriod);
 
 AttributeDefinition loanAmount =
-    new AttributeDefinition(Name = 'loanAmount', DataType='Currency', Description='LoanAmount', Label= 'LoanAmount', isActive=True);
+    new AttributeDefinition(Name = 'LoanAmount', DataType='Currency', Description='LoanAmount', Label= 'LoanAmount', isActive=True);
 
 insert loanAmount;
 
 System.debug('Created attribute definition loanAmount: ' + loanAmount);
 
 AttributeDefinition creditScore =
-    new AttributeDefinition(Name = 'creditScore', DataType='Number', Description='CreditScore', Label= 'CreditScore', isActive=True);
+    new AttributeDefinition(Name = 'CreditScore', DataType='Number', Description='CreditScore', Label= 'CreditScore', isActive=True);
 
 insert creditScore;
 
