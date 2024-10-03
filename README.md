@@ -52,9 +52,9 @@ If you have existing active picklist values in your org for above picklists then
 3. Run `sf project deploy start --metadata-dir metadata/Profiles -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-Creates a custom profile called Sample Customer Community Plus Login User Clone, adds object permissions and user permissions for community user
+Creates custom profiles called Sample Customer Community Plus Login User Clone, Agent Digital Lending and Underwriter Digital Lending. Adds object and user permissions for these profiles.
 
-Assigns fieldpermissions to Admin and Sample Customer Community Plus Login User Clone profiles for the new custom field City.
+Assigns field permission to these profiles for the new custom field City.
 
 Updated Sharing Settings to expose objects to community users
 </details>
