@@ -10,11 +10,12 @@ Digital Lending feature setup has several steps. This repo automates many of the
 ### Prerequisites and Guidelines
 
 1. Run all the following steps on a fresh org (i.e. any newly created org without additional data).
-2. The setup is divided into several sections. Digital Lending relies on several Salesforce features and each section will complete setup for a subset of the features.
-3. The setup will create data, for e.g. Product. Running the same command again might lead to duplicate data.
-4. The org should have all the appropriate licenses so that Digital Lending feature is available on your org. The setup will help you assign appropriate permission sets etc.
-5. The setup assumes that the user has latest `sf` (Salesforce-CLI) installed. It also assumes general familiarity with Salesforce.
-6. Ensure that Apex Debug Level is set to `DEBUG` or more verbose. This is required since some of the commands below will debug-print from Apex code. You will need to note certain data from these logs to be used in later steps.
+2. The Digital Lending sample data in this repository is intended for non-production Salesforce orgs.
+3. The setup is divided into several sections. Digital Lending relies on several Salesforce features and each section will complete setup for a subset of the features.
+4. The setup will create data, for e.g. Product. Running the same command again might lead to duplicate data.
+5. The org should have all the appropriate licenses so that Digital Lending feature is available on your org. The setup will help you assign appropriate permission sets etc.
+6. The setup assumes that the user has latest `sf` (Salesforce-CLI) installed. It also assumes general familiarity with Salesforce.
+7. Ensure that Apex Debug Level is set to `DEBUG` or more verbose. This is required since some of the commands below will debug-print from Apex code. You will need to note certain data from these logs to be used in later steps.
 
 Connect to your org using `sf org login web -a YourOrgAlias -r YOURURL` command.
 
