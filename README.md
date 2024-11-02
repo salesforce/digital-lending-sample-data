@@ -158,33 +158,10 @@ Adds records in the custom objects for Pricing.
 Creates decision tables used for pricing.
 </details>
 
-3. Modify Price Adjustment Matrices using below steps
+3. Run `sf project deploy start --metadata-dir metadata/PricingRecipe -o YourOrgAlias`
 <details>
-<summary>Steps to modify Price Adjustment Matrices</summary>
-
-1. Go to Setup > Pricing Recipes > NGPDefaultRecipe > Select Price Adjustment Matrix tab > Click Modify 
-
-2. Update CreditScoreBasedAdjustment's Variable Mapping to TierValue__c for AdjustmentValue and TierType__c for AdjustmentType
-
-3. Select CreditScoreBasedAdjustment by clicking on the + button
-
-4. Click Save
-
-5. Click Modify
-
-6. Update ProductListRateDT's Pricing Component Type to List Price and update the Variable Mapping to List Rate for UnitPrice
-
-7. Select ProductListRateDT by clicking on the + button
-
-8. Click Save
-
-9. Click Modify
-
-10. Update TermBasedAdjustmentDT's Variable Mapping to TierValue__c for AdjustmentValue and TierType__c for AdjustmentType
-
-11. Select TermBasedAdjustmentDT by clicking on the + button
-
-12. Click Save
+<summary>Command Details</summary>
+Creates pricing recipe called DigitalLendingRecipe that provides configuration for how lookup tables are used within procedures 
 </details>
 
 4. Run `sf project deploy start --metadata-dir metadata/PricingExpressionSet -o YourOrgAlias`
@@ -203,20 +180,26 @@ Creates Application Form Participant Role With Read/Write access level
 
 ### Stage Management for Digital Lending 
 
-1. Run `sf project deploy start --metadata-dir metadata/StageManagement -o YourOrgAlias`
+1. Run `sf apex run --file apex/StageManagementGroupSetup.apex -o YourOrgAlias`
+<details>
+<summary>Command Details</summary>
+Creates 2 participant groups called Agent_Group and Underwriter_Group
+</details>
+
+2. Run `sf project deploy start --metadata-dir metadata/StageManagement -o YourOrgAlias`
 
 <details>
 <summary>Command Details</summary>
 Adds Apex files, Decision Matrix Definition, Flow, and Participant Roles. CDSCacheHelper helps cache SOQL results. CDSUtil will be run as a stage transition step. When an Application Form Product's Stage field changes, the Visible Status field will change based on the decision matrix values. Additionally, the associated Application Form's Stage field will also change based on the decision matrix values. Afterwards, Participant records will be created on the Application Form Product, the associated Application Form record, and the associated Party Profile record based on the decision matrix values. Creates Decision Matrix definitions for the org. Creates Participant roles for access levels on Application Form Product, Application Form, and Party Profile entities. Creates an Autolaunched Flow to invoke the CDSUtil Apex file.
 </details>
 
-2. Run `sf apex run --file apex/StageManagement.apex -o YourOrgAlias`
+3. Run `sf apex run --file apex/StageManagement.apex -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Adds rows to the Decision Matrices: AFPStage_To_AFStage, AFPStage_To_ApplicantVisibleStatus, AFPStage_To_CDS_Access
 </details>
 
-3. Run `sf project deploy start --metadata-dir metadata/StageDefinition -o YourOrgAlias`
+4. Run `sf project deploy start --metadata-dir metadata/StageDefinition -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
 Creates the Stage Definition for Digital Lending
