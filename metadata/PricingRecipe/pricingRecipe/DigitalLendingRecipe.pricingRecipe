@@ -2,7 +2,7 @@
 <PricingRecipe xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultPricingProcedureId> </defaultPricingProcedureId>
     <developerName>DigitalLendingRecipe</developerName>
-    <isActive>false</isActive>
+    <isActive>true</isActive>
     <isInternal>false</isInternal>
     <masterLabel>DigitalLendingRecipe</masterLabel>
     <pricingRecipeTableMapping>
