@@ -9,4 +9,7 @@
     <enableCdsPartyProfile>true</enableCdsPartyProfile>
     <enableCdsPartyProfileSiteUsers>true</enableCdsPartyProfileSiteUsers>
     <enableIndustriesStageManagementPref>true</enableIndustriesStageManagementPref>
+    <enablePartyProfileParentSharingOrgPref>true</enablePartyProfileParentSharingOrgPref>
+    <enablePartyprofParentMultiSharingOrgPref>true</enablePartyprofParentMultiSharingOrgPref>
+    <enableDigitalLendingReadOnlyOrgPref>true</enableDigitalLendingReadOnlyOrgPref>
 </IndustriesSettings>

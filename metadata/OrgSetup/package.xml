@@ -12,6 +12,7 @@
         <members>IndustriesContext</members>
         <members>IndustriesPricing</members>
         <members>Industries</members>
+        <members>ProductDiscovery</members>
         <name>Settings</name>
     </types>
     <types>
