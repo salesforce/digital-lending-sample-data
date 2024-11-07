@@ -159,7 +159,7 @@ Creates decision tables used for pricing.
 3. Run `sf project deploy start --metadata-dir metadata/PricingRecipe -o YourOrgAlias`
 <details>
 <summary>Command Details</summary>
-Creates pricing recipe called DigitalLendingRecipe that provides configuration for how lookup tables are used within procedures 
+Updates existing pricing recipe called NGPDefaultRecipe that provides configuration for how lookup tables are used within procedures 
 </details>
 
 4. Run `sf project deploy start --metadata-dir metadata/PricingExpressionSet -o YourOrgAlias`

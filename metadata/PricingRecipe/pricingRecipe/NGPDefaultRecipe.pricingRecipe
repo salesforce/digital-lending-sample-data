@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PricingRecipe xmlns="http://soap.sforce.com/2006/04/metadata">
     <defaultPricingProcedureId> </defaultPricingProcedureId>
-    <developerName>DigitalLendingRecipe</developerName>
+    <developerName>NGPDefaultRecipe</developerName>
     <isActive>true</isActive>
     <isInternal>false</isInternal>
-    <masterLabel>DigitalLendingRecipe</masterLabel>
+    <masterLabel>NGPDefaultRecipe</masterLabel>
     <pricingRecipeTableMapping>
         <isInternal>false</isInternal>
         <lookupTableDeveloperName>CreditScoreBasedAdjustment</lookupTableDeveloperName>
@@ -21,7 +21,7 @@
             <outputFieldName>0lPxx000000006W</outputFieldName>
             <outputType>AdjustmentType</outputType>
         </pricingProcedureOutputMapList>
-        <pricingRecipe>DigitalLendingRecipe</pricingRecipe>
+        <pricingRecipe>NGPDefaultRecipe</pricingRecipe>
     </pricingRecipeTableMapping>
     <pricingRecipeTableMapping>
         <isInternal>false</isInternal>
@@ -33,7 +33,7 @@
             <outputFieldName>0lPxx000000006Y</outputFieldName>
             <outputType>UnitPrice</outputType>
         </pricingProcedureOutputMapList>
-        <pricingRecipe>DigitalLendingRecipe</pricingRecipe>
+        <pricingRecipe>NGPDefaultRecipe</pricingRecipe>
     </pricingRecipeTableMapping>
     <pricingRecipeTableMapping>
         <isInternal>false</isInternal>
@@ -51,6 +51,6 @@
             <outputFieldName>0lPxx000000006b</outputFieldName>
             <outputType>AdjustmentType</outputType>
         </pricingProcedureOutputMapList>
-        <pricingRecipe>DigitalLendingRecipe</pricingRecipe>
+        <pricingRecipe>NGPDefaultRecipe</pricingRecipe>
     </pricingRecipeTableMapping>
 </PricingRecipe>
