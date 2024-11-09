@@ -9,10 +9,15 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>*</members>
+        <name>UserAccessPolicy</name>
+    </types>
+    <types>
         <members>IndustriesContext</members>
         <members>IndustriesPricing</members>
         <members>Industries</members>
         <members>ProductDiscovery</members>
+        <members>UserManagement</members>
         <name>Settings</name>
     </types>
     <types>
