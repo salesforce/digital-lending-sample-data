@@ -7,7 +7,7 @@
     <triggerType>CreateAndUpdate</triggerType>
     <userAccessPolicyActions>
         <action>Grant</action>
-        <target>SampleDigitalLendingClone</target>
+        <target>Sample_Financial_Services_For_Customer_Community_Plus_Login_Clone</target>
         <type>PermissionSet</type>
     </userAccessPolicyActions>
     <userAccessPolicyFilters>
