@@ -201,6 +201,4 @@ Adds rows to the Decision Matrices: AFPStage_To_AFStage, AFPStage_To_ApplicantVi
 <details>
 <summary>Command Details</summary>
 Creates the Stage Definition for Digital Lending  
-
-Note: If the above command fails with error `In field: RunAsUser - no User named 005SG0000070iEkYAI found`, please replace the username mentioned in runAsUser tags with the username of the User deploying the Stage Definition or with the username of the Admin in target org
 </details>
